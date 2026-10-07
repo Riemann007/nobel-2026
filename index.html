@@ -212,7 +212,7 @@
   @media (max-width:720px){
     nav.top .inner{flex-direction:column; align-items:stretch; gap:8px; padding:10px 16px}
     nav.top .brand{font-size:14.5px; text-align:center}
-    nav.top .links{display:flex; overflow-x:auto; gap:4px; padding-bottom:2px;
+    nav.top .links{display:flex; flex-wrap:nowrap; overflow-x:auto; gap:4px; padding-bottom:2px;
       -webkit-overflow-scrolling:touch; scrollbar-width:none}
     nav.top .links::-webkit-scrollbar{display:none}
     nav.top .links a{white-space:nowrap; background:rgba(255,255,255,.08); font-size:12px}
@@ -314,8 +314,9 @@
 
   /* 锚点落点停在吸顶导航下方（导航高 50px 桌面 / 87px 手机，实测）
      —— 不加这条，点目录跳过去标题会被导航盖住 */
-  section, article.prize, footer, h2, h3, figure, details{scroll-margin-top:64px}
-  @media (max-width:720px){ section, article.prize, footer, h2, h3, figure, details{scroll-margin-top:100px} }
+  :root{--navh:64px}
+  section, article.prize, footer, h2, h3, h4, figure, details{
+    scroll-margin-top:calc(var(--navh) + 18px)}
 
   /* 手机端目录：编号 + 标题一行，右侧说明另起一行，避免中文被挤断 */
   @media (max-width:560px){
@@ -1129,6 +1130,15 @@
       bar.style.width = Math.min(100, Math.max(0, p)) + '%';
       if (window.scrollY > 600) { top.classList.add('show'); } else { top.classList.remove('show'); }
     }
+    // 把导航实际高度写进 --navh，锚点落点用 calc() 算（导航行数会随屏幕宽度变，写死必错）
+    var navEl = document.querySelector('nav.top');
+    function setNavh() {
+      if (navEl) document.documentElement.style.setProperty('--navh', navEl.offsetHeight + 'px');
+    }
+    setNavh();
+    window.addEventListener('resize', setNavh);
+    window.addEventListener('load', setNavh);
+
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     onScroll();
@@ -1139,7 +1149,7 @@
     // 导航高亮（scroll-spy）：用 IntersectionObserver，无依赖
     var links = {};
     document.querySelectorAll('nav.top .links a').forEach(function (a) { links[a.dataset.nav] = a; });
-    var targets = document.querySelectorAll('#schedule, article.prize, #pending, #sources');
+    var targets = document.querySelectorAll('#schedule, article.prize, #pending, #map, #sources');
     if ('IntersectionObserver' in window && targets.length) {
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
