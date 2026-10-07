@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>2026 年诺贝尔奖 · 六天，六个奖｜The Nobel Prize 2026（中英对照）</title>
-<meta name="description" content="2026 年诺贝尔奖 10 月 5 日至 12 日陆续揭晓。中英对照，中文为主；每一条内容取自诺贝尔奖官方一手来源，未揭晓的奖项留白。">
+<title>2026 年诺贝尔奖 · 六天，六个奖｜The Nobel Prize 2026（中英对照 · 官方原图）</title>
+<meta name="description" content="2026 年诺贝尔奖 10 月 5 日至 12 日陆续揭晓。中英对照，中文为主；每个奖项一条因果链、官方插图与得主肖像（均取自 nobelprize.org 原图）、官方访谈视频；未揭晓的奖项留白。">
+<meta name="theme-color" content="#00263e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2300263e'/%3E%3Ccircle cx='16' cy='16' r='6.4' fill='%23cea152'/%3E%3Ccircle cx='16' cy='16' r='10.6' fill='none' stroke='%23cea152' stroke-opacity='.45' stroke-width='1.5'/%3E%3C/svg%3E">
 <style>
   /* ── 设计令牌：取自诺贝尔奖官网样式表本身（--nobel-gold / --berlin-blue / --dune / --jumbo / --lochMara / --very-light-grey） ── */
@@ -202,6 +203,164 @@
     header.hero{background:#fff; color:var(--ink)}
     header.hero h1,header.hero .eyebrow,header.hero .hero-lede,header.hero .hero-meta{color:var(--ink)}
   }
+
+  /* ══════════ v4 新增：导航 / 目录 / 官方图集 / 影像 / 授权 ══════════ */
+
+  /* 导航（品牌改为链接；窄屏改为可横向滚动，不再直接隐藏） */
+  nav.top .brand{border-bottom:none}
+  nav.top .links a.on{color:#fff; background:rgba(255,255,255,.18)}
+  @media (max-width:720px){
+    nav.top .inner{flex-direction:column; align-items:stretch; gap:8px; padding:10px 16px}
+    nav.top .brand{font-size:14.5px; text-align:center}
+    nav.top .links{display:flex; overflow-x:auto; gap:4px; padding-bottom:2px;
+      -webkit-overflow-scrolling:touch; scrollbar-width:none}
+    nav.top .links::-webkit-scrollbar{display:none}
+    nav.top .links a{white-space:nowrap; background:rgba(255,255,255,.08); font-size:12px}
+  }
+
+  /* 目录 */
+  section.toc{background:var(--paper-3); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:22px 24px 24px; margin:26px 0 34px}
+  section.toc .sec-label{border-bottom:none; margin-bottom:8px; padding-bottom:0}
+  .toc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(292px,1fr)); gap:0 30px}
+  a.toc-item{display:flex; align-items:baseline; gap:11px; padding:11px 0 9px;
+    border-bottom:1px solid var(--line-2); border-radius:0}
+  a.toc-item .n{font-family:var(--font-mono); font-size:11px; font-weight:600; color:var(--gold-deep); flex:none; width:18px}
+  a.toc-item .t{font-size:14.8px; font-weight:600; color:var(--ink); line-height:1.5}
+  a.toc-item .d{font-size:12.2px; color:var(--ink-3); margin-left:auto; text-align:right; white-space:nowrap}
+  a.toc-item:hover .t{color:var(--blue)}
+  .toc-sub{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px 29px}
+  .toc-sub a{font-size:11.8px; color:var(--ink-2); border:1px solid var(--line); background:var(--paper);
+    border-radius:999px; padding:2px 9px; line-height:1.6}
+  .toc-sub a:hover{border-color:var(--blue); color:var(--blue)}
+
+  /* 官方图集 */
+  .figs{display:grid; gap:30px; margin-top:4px}
+  figure.fig{margin:0 !important}
+  figure.fig a{border-bottom:none; display:block}
+  figure.fig img{width:100%; height:auto; display:block; border:1px solid var(--line);
+    border-radius:var(--radius); background:var(--paper-2)}
+  figure.fig.tall img{width:auto; max-width:100%; max-height:74vh; margin:0 auto}
+  figure.fig .meta{margin-top:10px}
+  figure.fig .look{font-size:14.2px; color:var(--ink-2); line-height:1.78}
+  figure.fig .look b{color:var(--navy); font-weight:600}
+  figure.fig .off{font-family:var(--font-serif); font-style:italic; font-size:12.8px;
+    color:var(--ink-3); margin-top:7px; line-height:1.65}
+  figure.fig .cr{font-family:var(--font-mono); font-size:10.8px; color:var(--ink-3);
+    margin-top:6px; line-height:1.5}
+  figure.fig .cr span{border-left:2px solid var(--gold); padding-left:8px}
+
+  /* 进阶图表折叠 */
+  details.adv{margin-top:26px; border:1px solid var(--line); border-radius:var(--radius);
+    background:var(--paper-3); padding:0 18px}
+  details.adv summary{cursor:pointer; padding:15px 0; font-size:14.6px; font-weight:600;
+    color:var(--navy); list-style:none}
+  details.adv summary::-webkit-details-marker{display:none}
+  details.adv summary::before{content:"＋"; font-family:var(--font-mono); color:var(--gold-deep); margin-right:9px}
+  details.adv[open] summary::before{content:"－"}
+  details.adv .inner{padding:0 0 20px}
+
+  /* 得主卡（带官方肖像） */
+  .people{display:grid; gap:12px}
+  .person{border:1px solid var(--line); border-radius:var(--radius); padding:13px;
+    background:var(--paper-3); display:grid; grid-template-columns:74px 1fr; gap:13px; align-items:start}
+  .person .ph{width:74px; height:auto; display:block; border:1px solid var(--line);
+    border-radius:3px; background:var(--paper-2)}
+  .person .pcr{font-family:var(--font-mono); font-size:9.4px; color:var(--ink-3);
+    margin-top:5px; line-height:1.42}
+  .person .nm{margin-top:1px}
+  @media (max-width:420px){ .person{grid-template-columns:62px 1fr; gap:11px}
+    .person .ph{width:62px} }
+
+  /* 官方影像 */
+  .vids{display:grid; gap:10px; margin-top:4px}
+  a.vid{display:grid; grid-template-columns:34px 1fr auto; gap:13px; align-items:center;
+    padding:13px 15px; border:1px solid var(--line); border-radius:var(--radius);
+    background:var(--paper-3)}
+  a.vid .play{width:32px; height:32px; border-radius:50%; background:var(--navy); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:11px; padding-left:2px}
+  a.vid .t{display:block; font-size:14.4px; font-weight:600; color:var(--ink); line-height:1.5}
+  a.vid .s{display:block; font-size:12.4px; color:var(--ink-3); margin-top:4px; line-height:1.6}
+  a.vid .ext{font-family:var(--font-mono); font-size:10.4px; color:var(--ink-3);
+    letter-spacing:.06em; white-space:nowrap}
+  a.vid:hover{border-color:var(--blue); background:var(--paper)}
+  a.vid:hover .t{color:var(--blue)}
+  @media (max-width:520px){ a.vid{grid-template-columns:30px 1fr}
+    a.vid .ext{grid-column:2; margin-top:4px} }
+
+  /* 授权条款 */
+  section.rights{margin-top:46px}
+  .terms{display:grid; gap:16px; margin-top:6px}
+  .term{border-left:3px solid var(--gold); padding:2px 0 2px 15px}
+  .term .tt{font-size:14.6px; font-weight:600; color:var(--navy); margin-bottom:6px}
+  .term .en{font-family:var(--font-serif); font-style:italic; font-size:13.2px;
+    color:var(--ink-2); line-height:1.72}
+  .term .zh{font-size:13.6px; color:var(--ink-2); margin-top:6px; line-height:1.8}
+  .term .zh b{color:var(--ink)}
+
+  /* 回到目录悬浮按钮 */
+  #toTop{position:fixed; right:16px; bottom:16px; z-index:55; width:44px; height:44px;
+    border-radius:50%; background:var(--navy); color:#fff; border:1px solid rgba(255,255,255,.22);
+    display:none; align-items:center; justify-content:center; cursor:pointer;
+    box-shadow:0 6px 22px rgba(0,38,62,.3); font-size:15px; font-family:var(--font-sans)}
+  #toTop.show{display:flex}
+  #toTop:hover{background:var(--navy-soft)}
+
+  section.pending{margin-top:10px}
+  @media print{ #toTop{display:none !important}
+    section.toc{break-inside:avoid} figure.fig{break-inside:avoid} }
+
+  /* ══════════ v4 修正：锚点偏移 / 手机端目录换行 / 关键数字通栏 ══════════ */
+
+  /* 锚点落点停在吸顶导航下方（导航高 50px 桌面 / 87px 手机，实测）
+     —— 不加这条，点目录跳过去标题会被导航盖住 */
+  section, article.prize, footer, h2, h3, figure, details{scroll-margin-top:64px}
+  @media (max-width:720px){ section, article.prize, footer, h2, h3, figure, details{scroll-margin-top:100px} }
+
+  /* 手机端目录：编号 + 标题一行，右侧说明另起一行，避免中文被挤断 */
+  @media (max-width:560px){
+    a.toc-item{display:grid; grid-template-columns:18px 1fr; gap:3px 11px; align-items:baseline}
+    a.toc-item .t{font-size:14.4px}
+    a.toc-item .d{grid-column:2; margin-left:0; text-align:left; white-space:normal; font-size:12px}
+    .toc-sub{margin-left:29px; gap:5px}
+  }
+
+  /* 关键数字：通栏放在两栏之后（11 组数字是这页的记忆锚点，值得占满一行） */
+  .facts-band{margin-top:30px}
+  .facts-band .facts{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+  .facts-band .fact .n{font-size:clamp(22px,5vw,30px)}
+  @media (max-width:560px){ .facts-band .facts{grid-template-columns:repeat(2,1fr)} }
+
+  /* 得主卡收紧：医学 3 位得主时卡片总高要与左栏「为什么重要」齐平（实测 695→约 400px） */
+  .person{padding:10px 12px; gap:12px; grid-template-columns:58px 1fr}
+  .person .ph{width:58px}
+  .person .nm{font-size:14.8px}
+  .person .nm .zh{font-size:12.8px; margin-left:5px}
+  .person .aff{font-size:12.7px; margin-top:5px; line-height:1.6}
+  .person .aff .en{font-size:12px}
+  .person .bio{font-size:11.2px; margin-top:5px; line-height:1.5}
+  .person .pcr{font-size:8.8px; margin-top:4px}
+  .people{gap:10px}
+
+  /* 目录条目：奖项名一行（不折行），完整标题另起一行，右侧元信息 */
+  a.toc-item .t{line-height:1.45}
+  a.toc-item .t .st{display:block; font-size:12.6px; font-weight:400; color:var(--ink-3); margin-top:2px}
+  @media (max-width:560px){ a.toc-item .t .st{font-size:12.2px} }
+
+  /* 得主并排通栏（3 位以上得主的奖）：为何重要占满宽度，得主 3 幅肖像一行 */
+  article.prize .body > h3.sec + .why{max-width:56em}
+  .people.row{display:grid; grid-template-columns:repeat(auto-fit,minmax(292px,1fr)); gap:12px}
+  .people.row .person{grid-template-columns:58px 1fr}
+  @media (max-width:700px){ .people.row{grid-template-columns:1fr} }
+  /* 肖像署名移到卡片底部通栏，省掉窄列里的多行折行 */
+  .person .pcr{grid-column:1 / -1; margin-top:0; padding-top:6px;
+    border-top:1px solid var(--line-2); font-size:9.6px; line-height:1.4}
+
+  /* 人名与短标签不拆行（中文可在任意字间断行，人名被拆很难看） */
+  .person .nm, .person .nm .zh, .tl-node .zh, .wait h2{word-break:keep-all}
+  .person .nm .zh{white-space:nowrap}
+  @media (max-width:520px){ .person .nm .zh{display:block; margin-left:0; margin-top:2px} }
+
 </style>
 </head>
 <body>
@@ -210,34 +369,40 @@
 
 <nav class="top">
   <div class="inner">
-    <div class="brand">2026 诺贝尔奖 <b>Nobel Prize</b> · 中英对照</div>
-    <div class="links">
-      <a href="#schedule">时间表 Schedule</a>
-      <a href="#medicine">医学 Medicine</a>
-      <a href="#physics">物理 Physics</a>
-      <a href="#pending">待揭晓 Pending</a>
-      <a href="#sources">来源 Sources</a>
-    </div>
+    <a class="brand" href="#top">2026 诺贝尔奖 <b>Nobel Prize</b> · 中英对照</a>
+    <div class="links"><a href="#schedule" data-nav="schedule">时间表</a><a href="#medicine" data-nav="medicine">医学</a><a href="#physics" data-nav="physics">物理</a><a href="#pending" data-nav="pending">待揭晓</a><a href="#sources" data-nav="sources">来源与授权</a></div>
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="wrap">
     <span class="eyebrow">The Nobel Prize 2026 · 5–12 October</span>
     <h1>六天，六个奖<span class="sub">The Nobel Prize 2026 — a bilingual guide to every award, as it is announced</span></h1>
     <p class="hero-lede">
-      每个奖一条线索：官方为什么颁给它、得主做了什么、这件事为什么重要。中文为主，英文原文对照。
-      <span class="en">For each prize: why the committee awarded it, what the laureates actually did, and why it matters — in Chinese, with the official English wording kept alongside.</span>
+      每个奖一条线索：官方为什么颁给它、得主做了什么、这件事为什么重要。中文为主，英文原文对照；插图与得主肖像都用诺贝尔奖官方原图。
+      <span class="en">For each prize: why the committee awarded it, what the laureates actually did, and why it matters — illustrated with the official Nobel Prize artwork and portraits.</span>
     </p>
     <div class="hero-meta">
       <span>来源 <b>诺贝尔奖官方</b> nobelprize.org · api.nobelprize.org</span>
-      <span>读者 <b>中学阶段</b> <span class="en">for secondary-school readers</span></span>
+      <span>官方插图 <b>13 张</b> <span class="en">official illustrations</span></span>
+      <span>得主肖像 <b>4 张</b> <span class="en">official portraits</span></span>
       <span>本页更新 <b><time id="stamp" datetime="2026-10-07">2026-10-07</time></b></span>
     </div>
   </div>
 </header>
 
 <main class="wrap">
+
+  <section class="toc" id="toc">
+    <h2 class="sec-label"><span class="lab">Contents</span><span class="zh">目录 · 点任意一行跳转</span></h2>
+    <div class="toc-grid">
+<a class="toc-item" href="#schedule"><span class="n">00</span><span class="t">揭晓时间表 · 10 月 5 日至 12 日</span><span class="d">六个奖</span></a>
+<a class="toc-item" href="#medicine"><span class="n">01</span><span class="t">生理学或医学奖<span class="st">追光的藻，给了神经细胞一个开关</span></span><span class="d">2026-10-05 · 3 位得主</span></a><div class="toc-sub"><a href="#medicine-chain">因果链</a><a href="#medicine-figs">官方插图</a><a href="#medicine-people">得主</a><a href="#medicine-video">官方影像</a><a href="#medicine-srcs">官方来源</a></div>
+<a class="toc-item" href="#physics"><span class="n">02</span><span class="t">物理学奖<span class="st">在南极，接住宇宙深处的隐身信使</span></span><span class="d">2026-10-06 · 1 位得主</span></a><div class="toc-sub"><a href="#physics-chain">因果链</a><a href="#physics-figs">官方插图</a><a href="#physics-people">得主</a><a href="#physics-video">官方影像</a><a href="#physics-srcs">官方来源</a></div>
+<a class="toc-item" href="#pending"><span class="n">03</span><span class="t">尚未揭晓 · 4 项</span><span class="d">化学、文学、和平、经济学</span></a>
+<a class="toc-item" href="#sources"><span class="n">04</span><span class="t">来源与授权 · 本页的取材纪律</span><span class="d">官方条款原文</span></a>
+    </div>
+  </section>
 
   <section class="tl" id="schedule">
     <h2 class="sec-label"><span class="lab">Schedule</span><span class="zh">揭晓时间表 · 10 月 5 日至 12 日</span></h2>
@@ -252,286 +417,406 @@
   </section>
 
   <div class="notice">
-    <p><b>读之前先知道两件事。</b><span class="en">Two things to know before you read.</span></p>
+    <p><b>读之前先知道三件事。</b><span class="en">Three things to know before you read.</span></p>
     <p>① 揭晓顺序与日期取自诺贝尔奖官方数据接口的 <code>dateAwarded</code> 字段，逐条核对。每个奖的授奖引文保留官方英文原句，附中文转述，方便对照原文。<span class="en">Dates come from the official API field <code>dateAwarded</code>. Every citation is kept verbatim in English, with a Chinese rendering next to it.</span></p>
-    <p>② 化学、文学、和平、经济学四项<strong>尚未公布</strong>，本页不放任何「据说」「可能」之类的内容——官方的规矩是公布那一刻才同时发布得主与引文。<span class="en">Chemistry, Literature, Peace and Economic Sciences are <strong>not yet announced</strong>. Nothing speculative appears here: the Nobel committees release the laureates and the citation at the same moment.</span></p>
+    <p>② 化学、文学、和平、经济学四项<strong>尚未公布</strong>，本页不放任何「据说」「可能」之类的内容——官方的规矩是公布那一刻才同时发布得主与引文。<span class="en">Chemistry, Literature, Peace and Economic Sciences are <strong>not yet announced</strong>. Nothing speculative appears here.</span></p>
+    <p>③ 本页所有插图与肖像<strong>均取自诺贝尔奖官方</strong>（nobelprize.org 原图），署名行逐张保留；官方授权条款原文见页末「图片来源与授权」。<span class="en">All illustrations and portraits are the official Nobel Prize artwork; the permissions are quoted verbatim at the end of the page.</span></p>
   </div>
 
-  <!-- ══════════════ 生理学或医学 ══════════════ -->
-  <article class="prize" id="medicine">
-    <div class="top">
-      <div class="cat">
-        <span class="zh">生理学或医学</span>
-        <span class="en">Physiology or Medicine</span>
-        <span class="date">2026-10-05 · Karolinska Institutet</span>
-      </div>
-      <h2>追光的藻，给了神经细胞一个开关<span class="sub">Light-seeking algae gave us a switch for nerve cells</span></h2>
-      <blockquote class="cite">
-        <div class="tag">Official citation · 官方授奖引文</div>
-        <div class="en">“for their discoveries concerning light-gated ion channels and optogenetics”</div>
-        <div class="zh">表彰他们关于光门控离子通道与光遗传学的发现。</div>
-      </blockquote>
+<article class="prize" id="medicine">
+  <div class="top">
+    <div class="cat">
+      <span class="zh">生理学或医学奖</span>
+      <span class="en">Physiology or Medicine</span>
+      <span class="date">2026-10-05 · Karolinska Institutet</span>
     </div>
-    <div class="body">
-
-      <h3 class="sec"><span class="lab">In one line</span><span class="zh">一句话</span></h3>
-      <p class="lead">他们从一种会「追光」的单细胞绿藻身上，找到了一枚能被光打开的蛋白通道，再把它装进神经细胞。从此，研究人员可以用一束蓝光，点名开关某一种神经细胞，看清它到底在管什么。</p>
-      <p class="lead-en">A light-sensitive protein found in a single-celled alga became a switch that lets researchers turn individual nerve cells on and off — with nothing but blue light.</p>
-
-      <h3 class="sec"><span class="lab">The chain</span><span class="zh">因果链：从一颗藻到一个大脑开关</span></h3>
-      <ol class="chain">
-        <li>1990 年代初，Hegemann 问了一个简单问题：单细胞绿藻 <i>Chlamydomonas</i> 为什么能那么快地朝光游？<span class="en-inline"> How can a single-celled alga react so rapidly to light?</span></li>
-        <li>他用电极测：光打到藻的「眼点」后，<b>0.5 毫秒</b>就出电信号。而人眼从感光到出信号，至少要 <b>10 毫秒</b>——慢了二十多倍。<span class="en-inline"> A human eye needs at least 10 ms; the alga answered in half a millisecond.</span></li>
-        <li>他猜：藻里可能是<b>一个蛋白同时干两件事</b>，既感光、又是离子通道。当时没人见过这种通道，同行普遍怀疑。<span class="en-inline"> A single protein complex that both captures light and acts as an ion channel.</span></li>
-        <li>藻的感光蛋白一离开活细胞就散架。等到日本团队测出藻的基因图谱，Hegemann 从几千个基因里挑出两个候选，交给同事 Nagel。</li>
-        <li>Nagel 把这两个基因分别注射进<b>青蛙卵细胞</b>，让卵细胞大量生产这种蛋白、放到膜上。结果确认：照光就开——<b>channelrhodopsin-1 / 2（通道视紫红质）</b>被发现（2002、2003 年发表）。<span class="en-inline"> Channelrhodopsin: a directly light-gated ion channel.</span></li>
-        <li>2005 年，Deisseroth 要来 chR2 的基因，放进培养皿里的<b>大鼠神经细胞</b>。蓝光一照，神经细胞立刻放电，而且信号能传给下一个神经细胞。</li>
-        <li>2007 年，他把光纤穿过小鼠颅骨的小孔照进运动皮层：<b>光一开，胡须就动</b>。同年另一个实验里，用光照射一类控制清醒的神经细胞，睡着的鼠被「叫醒」了。</li>
-        <li>2012 年，他与利根川进（1987 年诺贝尔奖得主）一起激活小鼠的<b>记忆印迹</b>：让它在安全环境里表现出恐惧——第一次证明「哪些神经细胞是一段记忆的必需条件」。<span class="en-inline"> The first demonstration of exactly which nerve cells are necessary for a specific memory.</span></li>
-      </ol>
-
-      <figure>
-        <svg viewBox="0 0 720 150" role="img" aria-label="示意图：光如何把一颗藻的感光蛋白变成神经细胞的光开关">
-          <desc>三段图形：绿藻用眼点追光；蓝光打开细胞膜上的通道蛋白，带电离子流入；神经细胞因此放电。</desc>
-          <rect x="8" y="10" width="216" height="130" rx="4" fill="#ffffff" stroke="#e0ddd9"/>
-          <circle cx="92" cy="75" r="34" fill="#e8efdf" stroke="#b9c9a6"/>
-          <circle cx="110" cy="63" r="7" fill="#cea152"/>
-          <g stroke="#2370b8" stroke-width="3" stroke-linecap="round" class="pulse">
-            <path d="M30 52 h30"/><path d="M30 66 h30"/><path d="M30 80 h30"/>
-          </g>
-          <path d="M148 44 L192 75 L148 106" fill="none" stroke="#2370b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".45"/>
-          <rect x="252" y="10" width="216" height="130" rx="4" fill="#ffffff" stroke="#e0ddd9"/>
-          <path d="M268 88 h58" stroke="#b6b0a8" stroke-width="8" stroke-linecap="round"/>
-          <path d="M330 88 h62" stroke="#b6b0a8" stroke-width="8" stroke-linecap="round"/>
-          <rect x="322" y="64" width="14" height="48" rx="3" fill="#e4e1dc" stroke="#b6b0a8"/>
-          <circle cx="329" cy="52" r="5" fill="#2370b8"/>
-          <circle cx="329" cy="52" r="13" fill="#2370b8" opacity=".18" class="pulse"/>
-          <circle cx="330" cy="126" r="4.5" fill="#2370b8"/>
-          <circle cx="348" cy="130" r="4.5" fill="#2370b8"/>
-          <circle cx="366" cy="134" r="4.5" fill="#2370b8"/>
-          <rect x="496" y="10" width="216" height="130" rx="4" fill="#ffffff" stroke="#e0ddd9"/>
-          <circle cx="548" cy="76" r="24" fill="#eaf1f8" stroke="#2370b8"/>
-          <path d="M572 76 h100" stroke="#2370b8" stroke-width="3" stroke-linecap="round"/>
-          <path d="M606 76 l-13 -11 M606 76 l-13 11" stroke="#2370b8" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <path d="M672 76 l-13 -11 M672 76 l-13 11" stroke="#2370b8" stroke-width="3" stroke-linecap="round" fill="none"/>
-        </svg>
-        <ul class="figlegend">
-          <li><span class="mk">01</span>绿藻用「眼点」朝光游动</li>
-          <li><span class="mk">02</span>蓝光一照，通道打开，离子流入细胞</li>
-          <li><span class="mk">03</span>神经细胞因此放电，可被远程控制</li>
-        </ul>
-        <figcaption>示意图（本页自绘，非官方插图）。<span class="en">Schematic drawn for this page — not an official illustration.</span> 真正做实验时，要先把 chR2 的基因送进某一类神经细胞，再用蓝光照射。</figcaption>
-      </figure>
-
-      <div class="cols" style="margin-top:34px">
-        <div>
-          <h3 class="sec"><span class="lab">Why it matters</span><span class="zh">为什么重要</span></h3>
-          <div class="why">
-            <p>成年人的大脑约有 <b>900 亿个神经细胞</b>，每个又与其他细胞连出成千上万条通路；管完全不同功能的细胞常常混在一块儿。20 世纪的方法只能按「区域」干预，像一张模糊的草图：能看出哪片亮，说不清是哪根线在起作用。</p>
-            <p>光遗传学把分辨率提到了<b>单个细胞类型</b>。研究人员于是陆续点名：管疼痛的、管社交行为的、管口渴的、管进食的、管奖赏和注意的回路；还发现同一件事的不同环节（比如小鼠把幼崽叼回窝、给幼崽理毛）由不同的回路分管。</p>
-            <p>它也走到了临床门口：让视网膜色素变性致盲的人恢复部分视力——戴上会发光的特制眼镜，能辨认并抓住桌上的物体；以及让耳蜗植入体改用光而不是电来刺激听神经，更精确。</p>
-            <p>Deisseroth 还做了一个反方向的发现：心率变化会影响情绪。让心脏更用力地跳，焦虑感会被放大。</p>
-          </div>
+    <h2>追光的藻，给了神经细胞一个开关<span class="sub">Light-seeking algae gave us a switch for nerve cells</span></h2>
+    <blockquote class="cite">
+      <div class="tag">Official citation · 官方授奖引文</div>
+      <div class="en">“for their discoveries concerning light-gated ion channels and optogenetics”</div>
+      <div class="zh">表彰他们关于光门控离子通道与光遗传学的发现。（颁奖机构：卡罗林斯卡学院）</div>
+    </blockquote>
+  </div>
+  <div class="body">
+    <h3 class="sec"><span class="lab">In one line</span><span class="zh">一句话</span></h3>
+    <p class="lead">他们从一种会「追光」的单细胞绿藻身上，找到了一枚能被光打开的蛋白通道，再把它装进神经细胞。从此，研究人员可以用一束蓝光，点名开关某一种神经细胞，看清它到底在管什么。</p>
+    <p class="lead-en">A light-sensitive protein found in a single-celled alga became a switch that lets researchers turn individual nerve cells on and off — with nothing but blue light.</p>
+    <h3 class="sec" id="medicine-chain"><span class="lab">The chain</span><span class="zh">因果链：一步步是怎么走过来的</span></h3>
+    <ol class="chain">
+      <li>1990 年代初，Hegemann 问了一个简单问题：单细胞绿藻 <i>Chlamydomonas</i> 为什么能那么快地朝光游？</li>
+      <li>他用电极测：光打到藻的「眼点」后，<b>0.5 毫秒</b>就出电信号。而人眼从感光到出信号，至少要 <b>10 毫秒</b>——慢了二十多倍。</li>
+      <li>他猜：藻里可能是<b>一个蛋白同时干两件事</b>，既感光、又是离子通道。当时没人见过这种通道，同行普遍怀疑。</li>
+      <li>藻的感光蛋白一离开活细胞就散架。等到日本团队测出藻的基因图谱，Hegemann 从几千个基因里挑出两个候选，交给同事 Nagel。</li>
+      <li>Nagel 把这两个基因分别注射进<b>青蛙卵细胞</b>，让卵细胞大量生产这种蛋白、放到膜上。结果确认：照光就开——<b>channelrhodopsin-1 / 2（通道视紫红质）</b>被发现（2002、2003 年发表）。</li>
+      <li>2005 年，Deisseroth 要来 chR2 的基因，放进培养皿里的<b>大鼠神经细胞</b>。蓝光一照，神经细胞立刻放电，而且信号能传给下一个神经细胞。</li>
+      <li>2007 年，他把光纤穿过小鼠颅骨的小孔照进运动皮层：<b>光一开，胡须就动</b>。同年另一个实验里，用光照射一类控制清醒的神经细胞，睡着的鼠被「叫醒」了。</li>
+      <li>2012 年，他与利根川进（1987 年诺贝尔奖得主）一起激活小鼠的<b>记忆印迹</b>：让它在安全环境里表现出恐惧——第一次证明「哪些神经细胞是一段记忆的必需条件」。</li>
+    </ol>
+    <h3 class="sec" id="medicine-figs"><span class="lab">Official illustrations</span><span class="zh">官方插图（5 张 · 点图可看官方原图）</span></h3>
+    <p class="lead-en">Illustrations: The Nobel Committee for Physiology or Medicine / Mattias Karlén</p>
+    <div class="figs">
+<figure class="fig">
+  <a href="https://www.nobelprize.org/uploads/2026/10/NP_POM_2026_16-9_01.jpg" title="查看官方原图"><img src="assets/med-keyart.webp" width="1600" height="900" alt="官方插图：科学家想象用一个开关控制神经细胞" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>开篇概念图：一个念头，等了七十年。</b>　画面是一枚「开关」连接着神经细胞——这是科学家很久以来的想象，但一直没人知道现实里该用什么去拨动它。</div>
+    <div class="off">官方原题原文：Illustration: The Nobel Prize in Physiology or Medicine 2026</div>
+    <div class="cr"><span>© The Nobel Committee for Physiology or Medicine. Ill. Mattias Karlén</span></div>
+  </figcaption>
+</figure>
+<figure class="fig">
+  <a href="https://www.nobelprize.org/uploads/2026/10/POP_Fig_2.jpg" title="查看官方原图"><img src="assets/med-fig2-alga.webp" width="1600" height="617" alt="官方插图：单细胞绿藻衣藻用眼点感光" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>图 2：一颗藻为什么会「追光」。</b>　单细胞绿藻衣藻（Chlamydomonas）全身只有一个感光点，叫「眼点」。光够强，它就朝光源游过去——整个过程只要半毫秒。</div>
+    <div class="off">官方原题原文：Illustration: The alga Chlamydomonas senses light using its eyespot</div>
+    <div class="cr"><span>© The Nobel Committee for Physiology or Medicine. Ill. Mattias Karlén</span></div>
+  </figcaption>
+</figure>
+<figure class="fig">
+  <a href="https://www.nobelprize.org/uploads/2026/10/POP_Fig_3_ENG_01.jpg" title="查看官方原图"><img src="assets/med-fig3-frogegg.webp" width="1600" height="704" alt="官方插图：把衣藻基因放进青蛙卵细胞，观察通道开与关" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>图 3：把藻的基因搬进青蛙卵，看它开不开。</b>　左边：把藻的基因拷贝注入青蛙卵细胞。中间：通道蛋白会自己跑到细胞膜上，此时是关着的，离子（Ions）堵在外面；照光之后（右边）通道打开，离子流入，细胞产生电信号（Electric signal）。这一步证明了「一个蛋白既能感光、又是通道」。</div>
+    <div class="off">官方原题原文：Illustration: Chlamydomonas genes in frog eggs</div>
+    <div class="cr"><span>© The Nobel Committee for Physiology or Medicine. Ill. Mattias Karlén</span></div>
+  </figcaption>
+</figure>
+<figure class="fig">
+  <a href="https://www.nobelprize.org/uploads/2026/10/POP_Fig_4_ENG_01.jpg" title="查看官方原图"><img src="assets/med-fig4-culture.webp" width="1600" height="637" alt="官方插图：Deisseroth 把 chR2 基因导入培养的神经细胞" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>图 4：把这枚开关装进神经细胞。</b>　Deisseroth 把 chR2 的基因送进培养皿里的大鼠神经细胞。蓝光一照，神经细胞立刻放电，而且这个信号还能传给下一个神经细胞。</div>
+    <div class="off">官方原题原文：Illustration: Deisseroth introduced the gene encoding channelrhodopsin-2 into nerve cells</div>
+    <div class="cr"><span>© The Nobel Committee for Physiology or Medicine. Ill. Mattias Karlén</span></div>
+  </figcaption>
+</figure>
+<figure class="fig">
+  <a href="https://www.nobelprize.org/uploads/2026/10/POP_Fig_5_ENG_01.jpg" title="查看官方原图"><img src="assets/med-fig5-mouse.webp" width="1600" height="657" alt="官方插图：在活体小鼠脑内用光纤激活神经细胞" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>图 5：在活着的小鼠脑里，用光按下开关。</b>　光纤穿过颅骨上的小孔伸进脑内。光一开，被基因标记的那一类神经细胞就被激活——胡须动起来了；换成控制清醒的神经细胞，睡着的鼠被「叫醒」。</div>
+    <div class="off">官方原题原文：Illustration: Deisseroth successfully activated nerve cells in the brains of living mice</div>
+    <div class="cr"><span>© The Nobel Committee for Physiology or Medicine. Ill. Mattias Karlén</span></div>
+  </figcaption>
+</figure>
+    </div>
+    <details class="adv"><summary>展开进阶图表 · 4 张（进一步看实验怎么做、数据长什么样）</summary>
+    <div class="inner"><div class="figs">
+<figure class="fig">
+  <a href="https://www.nobelprize.org/uploads/2026/10/ADV_FIG_1_02.jpg" title="查看官方原图"><img src="assets/med-adv1.webp" width="1800" height="426" alt="数据图：衣藻的光敏感性与快速电反应" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>进阶图 1：0.5 毫秒是怎么量出来的。</b>　用电极记录藻类照光后的电流响应——横轴是时间，纵轴是电流。这条曲线的陡峭程度，就是「比人眼快二十多倍」的证据。</div>
+    <div class="off">官方原题原文：Light sensitivity and rapid electrical response of the Chlamydomonas reinhardtii</div>
+    <div class="cr"><span>© The Nobel Committee for Physiology or Medicine. Ill. Mattias Karlén</span></div>
+  </figcaption>
+</figure>
+<figure class="fig">
+  <a href="https://www.nobelprize.org/uploads/2026/10/ADV_FIG_2-02.jpg" title="查看官方原图"><img src="assets/med-adv2.webp" width="1800" height="497" alt="数据图：通道视紫红质-2 在爪蟾卵母细胞中的异源表达" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>进阶图 2：把藻蛋白放进蛙卵，做出可测的电流。</b>　在非洲爪蟾卵母细胞里表达 chR2，直接用不同波长的光刺激并记录电流——这是「它真的是一个光门控通道」的关键证据。</div>
+    <div class="off">官方原题原文：Heterologous expression of channelrhodopsin-2 in Xenopus laevis oocytes</div>
+    <div class="cr"><span>© The Nobel Committee for Physiology or Medicine. Ill. Mattias Karlén</span></div>
+  </figcaption>
+</figure>
+<figure class="fig">
+  <a href="https://www.nobelprize.org/uploads/2026/10/ADV_FIG_3-02.jpg" title="查看官方原图"><img src="assets/med-adv3.webp" width="1800" height="631" alt="数据图：用光控制神经元的动作电位" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>进阶图 3：让神经细胞按光的节奏放电。</b>　上面是光脉冲，下面是同一时刻记录到的神经细胞膜电位。每给一次光，就出现一次动作电位——精确到毫秒。</div>
+    <div class="off">官方原题原文：Optogenetic control of neuronal action potentials using light</div>
+    <div class="cr"><span>© The Nobel Committee for Physiology or Medicine. Ill. Mattias Karlén</span></div>
+  </figcaption>
+</figure>
+<figure class="fig">
+  <a href="https://www.nobelprize.org/uploads/2026/10/ADV_FIG_4-02.jpg" title="查看官方原图"><img src="assets/med-adv4.webp" width="1800" height="446" alt="数据图：活体光遗传学控制动物行为" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>进阶图 4：从细胞走到行为。</b>　在小鼠脑内埋入光纤，照射特定神经细胞，观察它的行为随之改变——这是光遗传学从「细胞层面」走到「行为层面」的一步。</div>
+    <div class="off">官方原题原文：In vivo optogenetics for control of animal behavior using light</div>
+    <div class="cr"><span>© The Nobel Committee for Physiology or Medicine. Ill. Mattias Karlén</span></div>
+  </figcaption>
+</figure>
+    </div></div></details>
+    <h3 class="sec"><span class="lab">Why it matters</span><span class="zh">为什么重要</span></h3>
+        <div class="why">
+          <p>成年人的大脑约有 <b>900 亿个神经细胞</b>，每个又与其他细胞连出成千上万条通路；管完全不同功能的细胞常常混在一块儿。20 世纪的方法只能按「区域」干预，像一张模糊的草图：能看出哪片亮，说不清是哪根线在起作用。</p>
+          <p>光遗传学把分辨率提到了<b>单个细胞类型</b>。研究人员于是陆续点名：管疼痛的、管社交行为的、管口渴的、管进食的、管奖赏和注意的回路；还发现同一件事的不同环节（比如小鼠把幼崽叼回窝、给幼崽理毛）由不同的回路分管。</p>
+          <p>它也走到了临床门口：让视网膜色素变性致盲的人恢复部分视力——戴上会发光的特制眼镜，能辨认并抓住桌上的物体；以及让耳蜗植入体改用光而不是电来刺激听神经，更精确。</p>
+          <p>Deisseroth 还做了一个反方向的发现：心率变化会影响情绪。让心脏更用力地跳，焦虑感会被放大。</p>
         </div>
-        <div>
-          <h3 class="sec"><span class="lab">Laureates</span><span class="zh">三位得主</span></h3>
-          <div class="people">
-            <div class="person">
-              <div class="nm">Karl Deisseroth<span class="zh">卡尔·戴瑟罗斯</span></div>
-              <div class="aff">霍华德·休斯医学研究所 / 斯坦福大学（美国）<span class="en">Howard Hughes Medical Institute and Stanford University, USA</span></div>
-              <div class="bio">b. 1971 · PhD 1998, MD 2000 (Stanford)</div>
-            </div>
-            <div class="person">
-              <div class="nm">Peter Hegemann<span class="zh">彼得·黑格曼</span></div>
-              <div class="aff">柏林洪堡大学（德国）<span class="en">Humboldt University of Berlin, Germany</span></div>
-              <div class="bio">b. 1954 · PhD 1984 · 获奖发现完成于马普生物化学研究所</div>
-            </div>
-            <div class="person">
-              <div class="nm">Georg Nagel<span class="zh">格奥尔格·纳格尔</span></div>
-              <div class="aff">维尔茨堡大学（德国）<span class="en">University of Würzburg, Germany</span></div>
-              <div class="bio">b. 1953 · PhD 1988 · 获奖发现完成于马普生物物理研究所</div>
-            </div>
-          </div>
-          <h3 class="sec"><span class="lab">Key numbers</span><span class="zh">关键数字</span></h3>
-          <div class="facts">
-            <div class="fact"><div class="n">0.5 ms</div><div class="l">藻类感光到出电信号<span class="en">alga: light in, current out</span></div></div>
-            <div class="fact"><div class="n">10 ms</div><div class="l">人眼同类过程至少这么久<span class="en">the same step in a human eye</span></div></div>
-            <div class="fact"><div class="n">90 bn</div><div class="l">成年人脑内神经细胞数量<span class="en">nerve cells in an adult brain</span></div></div>
-          </div>
+    <h3 class="sec" id="medicine-people"><span class="lab">Laureates</span><span class="zh">得主（3 位 · 官方肖像）</span></h3>
+    <div class="people row">
+<div class="person">
+  <img src="assets/p-deisseroth.webp" width="600" height="900" alt="Karl Deisseroth" loading="lazy" decoding="async" class="ph">
+  <div>
+    <div class="nm">Karl Deisseroth<span class="zh">卡尔·戴瑟罗斯</span></div>
+    <div class="aff">霍华德·休斯医学研究所 / 斯坦福大学（美国）<span class="en">Stanford University / HHMI, USA</span></div>
+    <div class="bio">b. 1971, Boston · PhD 1998 / MD 2000 (Stanford) · 获奖份额 1/3</div>
+  </div>
+  <div class="pcr">Ill. Niklas Elmehed © Nobel Prize Outreach</div>
+</div>
+<div class="person">
+  <img src="assets/p-hegemann.webp" width="600" height="900" alt="Peter Hegemann" loading="lazy" decoding="async" class="ph">
+  <div>
+    <div class="nm">Peter Hegemann<span class="zh">彼得·黑格曼</span></div>
+    <div class="aff">柏林洪堡大学（德国）<span class="en">Humboldt University of Berlin, Germany</span></div>
+    <div class="bio">b. 1954 · PhD 1984 · 获奖发现完成于马普生物化学研究所 · 1/3</div>
+  </div>
+  <div class="pcr">Ill. Niklas Elmehed © Nobel Prize Outreach</div>
+</div>
+<div class="person">
+  <img src="assets/p-nagel.webp" width="600" height="900" alt="Georg Nagel" loading="lazy" decoding="async" class="ph">
+  <div>
+    <div class="nm">Georg Nagel<span class="zh">格奥尔格·纳格尔</span></div>
+    <div class="aff">维尔茨堡大学（德国）<span class="en">University of Würzburg, Germany</span></div>
+    <div class="bio">b. 1953 · PhD 1988 · 获奖发现完成于马普生物物理研究所 · 1/3</div>
+  </div>
+  <div class="pcr">Ill. Niklas Elmehed © Nobel Prize Outreach</div>
+</div>
+    </div>
+    <div class="facts-band">
+      <h3 class="sec"><span class="lab">Key numbers</span><span class="zh">关键数字</span></h3>
+      <div class="facts">
+        <div class="fact"><div class="n">0.5 ms</div><div class="l">藻类感光到出电信号<span class="en">alga: light in, current out</span></div></div>
+        <div class="fact"><div class="n">10 ms</div><div class="l">人眼同类过程至少这么久<span class="en">the same step in a human eye</span></div></div>
+        <div class="fact"><div class="n">90 bn</div><div class="l">成年人脑内神经细胞数量<span class="en">nerve cells in an adult brain</span></div></div>
+      </div>
+    </div>
+    <h3 class="sec" id="medicine-video"><span class="lab">Official video</span><span class="zh">官方影像 · 得主本人怎么说</span></h3>
+    <div class="vids">
+<a class="vid" href="https://www.youtube.com/watch?v=RNogbM246cE" target="_blank" rel="noopener noreferrer">
+  <span class="play">▶</span>
+  <span><span class="t">Deisseroth：接到电话的那个晚上</span><span class="s">官方电话采访（英文）·「这么多谜团终于快要解开了」</span></span>
+  <span class="ext">YouTube · 6 min</span>
+</a>
+<a class="vid" href="https://www.youtube.com/watch?v=bZ13m69ZwCk" target="_blank" rel="noopener noreferrer">
+  <span class="play">▶</span>
+  <span><span class="t">Hegemann：「我真的被震住了」</span><span class="s">官方电话采访（英文）· 谈与朋友分享这个奖、以及纯粹的好奇心</span></span>
+  <span class="ext">YouTube · 8 min</span>
+</a>
+<a class="vid" href="https://www.youtube.com/watch?v=E_tL0QzwOZU" target="_blank" rel="noopener noreferrer">
+  <span class="play">▶</span>
+  <span><span class="t">Nagel：「真没想到……我以为光遗传学拿医学奖还太早」</span><span class="s">官方电话采访（英文）· 在意大利一个洒满阳光的露台上接到消息</span></span>
+  <span class="ext">YouTube · 6 min</span>
+</a>
+    </div>
+    <p class="lead-en" style="margin-top:12px">Videos are hosted by the Nobel Prize on YouTube; the same interviews are also on nobelprize.org (linked under Sources) with full transcripts. YouTube 在中国大陆需要国际网络环境才能播放；官方页面上的访谈文字稿不受影响。</p>
+    <div class="srcs" id="medicine-srcs">
+      <div class="k">Sources · 官方来源</div>
+      <div><a href="https://www.nobelprize.org/prizes/medicine/2026/summary/">获奖公告页 Summary</a> ｜ <a href="https://www.nobelprize.org/prizes/medicine/2026/press-release/">新闻稿 Press release</a> ｜ <a href="https://www.nobelprize.org/prizes/medicine/2026/popular-information/">面向公众的科普说明 Popular information</a> ｜ <a href="https://www.nobelprize.org/uploads/2026/10/advanced-medicineprize2026.pdf">进阶科学说明 Advanced information（PDF）</a> ｜ <a href="https://www.nobelprize.org/prizes/medicine/2026/deisseroth/facts/">得主主页与电话采访</a></div>
+    </div>
+  </div>
+</article>
+
+<article class="prize" id="physics">
+  <div class="top">
+    <div class="cat">
+      <span class="zh">物理学奖</span>
+      <span class="en">Physics</span>
+      <span class="date">2026-10-06 · Royal Swedish Academy of Sciences</span>
+    </div>
+    <h2>在南极，接住宇宙深处的隐身信使<span class="sub">Elusive particles from the universe captured at the South Pole</span></h2>
+    <blockquote class="cite">
+      <div class="tag">Official citation · 官方授奖引文</div>
+      <div class="en">“for decisive contributions to the IceCube Neutrino Observatory and the discovery of high-energy neutrinos of astrophysical origin”</div>
+      <div class="zh">表彰他对 IceCube 中微子天文台的决定性贡献，以及天体来源高能中微子的发现。（颁奖机构：瑞典皇家科学院）</div>
+    </blockquote>
+  </div>
+  <div class="body">
+    <h3 class="sec"><span class="lab">In one line</span><span class="zh">一句话</span></h3>
+    <p class="lead">他提出用南极冰盖做一台「望远镜」。冰够厚够纯，中微子撞上冰里的原子核时会闪出一点蓝光——用 5160 个光传感器盯住这些闪光，就能回溯它在宇宙中的来处。</p>
+    <p class="lead-en">Halzen realised that a cubic kilometre of Antarctic ice could work as a telescope: catch the rare flash a neutrino makes when it collides with a nucleus, and you can trace it back to its source.</p>
+    <h3 class="sec" id="physics-chain"><span class="lab">The chain</span><span class="zh">因果链：一步步是怎么走过来的</span></h3>
+    <ol class="chain">
+      <li>宇宙里有「天然加速器」，能把质子加速到地球上任何加速器都达不到的能量。可是<b>质子带电，一路被磁场弯折</b>，到了地球已经指不回老家。</li>
+      <li>物理规律给出一个线索：把质子加速到极高能量的过程，<b>同时也会产生高能中微子</b>。中微子不带电，穿过磁场不拐弯、穿过物质几乎不损耗，能笔直地指回源头。</li>
+      <li>中微子极难被发现：每秒有 <b>650 亿个</b>太阳中微子穿过你的一片指甲盖，你毫无感觉。要靠它，得有一个巨大的「靶子」。</li>
+      <li>当中微子偶尔撞上原子核，会生成带电粒子，沿途发出<b>蓝光</b>。水透明、能看见这种光，但要看得足够多，就需要极大的体积。</li>
+      <li>Halzen 换了个思路：用自然界现成的<b>冰</b>。他与同行在 1988 年的会议上首次提出在南极冰下建中微子天文台。</li>
+      <li>南极有别人比不了的条件：那里已有科考站和运输保障；冰下恒暗、没有生物干扰、放射性极低、地质稳定没有地震。代价是<b>一年中大部分时间进不去</b>，施工只能挤在南极夏季（11 月到次年 2 月）。</li>
+      <li>施工办法是从冰川学家那里学来的：用热水「淋浴头」融出千米深的孔，再把挂着光传感器的缆绳放下去。Halzen 形容传感器是「倒过来的灯泡」——吸收光，转成电信号。</li>
+      <li>头几轮结果令人失望：上层冰里全是气泡，光被散射成一团。后来发现 <b>1400 米以下</b>的冰异常纯净，闪光能走 300 米才被吸收，比任何人预期的都远。</li>
+      <li>第一代装置 AMANDA 建到 2000 年 1 月，够用但不够大。于是上 IceCube：<b>一立方公里的冰、86 根缆、5160 个传感器</b>，2011 年完工。</li>
+      <li>难点在噪声：每天有一亿多个大气粒子穿透到传感器所在的深度；大气中微子每天也有几百个从北半球穿过整个地球进来。只能靠<b>统计特征</b>把天体来的挑出来。</li>
+      <li>2013 年公布首批证据，再过两年数据积累够了，才敢确定：<b>这些中微子确实来自地球之外</b>。</li>
+      <li>今天候选源清单上最显眼的是活动星系 <b>NGC 1068（M77）</b>方向上的 79 个事件；研究人员也看到了来自<b>我们银河系内部</b>的高能中微子。下一步 IceCube-Gen2 是八立方公里的冰。</li>
+    </ol>
+    <h3 class="sec" id="physics-figs"><span class="lab">Official illustrations</span><span class="zh">官方插图（4 张 · 点图可看官方原图）</span></h3>
+    <p class="lead-en">Illustrations: Johan Jarnestad / The Royal Swedish Academy of Sciences</p>
+    <div class="figs">
+<figure class="fig">
+  <a href="https://www.nobelprize.org/uploads/2026/10/fig_fy_26_3x2.jpg" title="查看官方原图"><img src="assets/phy-keyart.webp" width="1600" height="1066" alt="官方插图：中微子进入探测器后撞出 μ 子" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>开篇图：一次碰撞，三个角色。</b>　橙红色的球是中微子（neutrino），它进了蓝色的探测器（detector）；碰撞时借由绿色的 W 玻色子（W boson）换手，产生出一个蓝色的 μ 子（muon）——正是这个 μ 子在冰里划出可以看见的光。</div>
+    <div class="off">官方原题原文：Illustration: Nobel Prize in Physics 2026</div>
+    <div class="cr"><span>© Johan Jarnestad/The Royal Swedish Academy of Sciences</span></div>
+  </figcaption>
+</figure>
+<figure class="fig">
+  <a href="https://www.nobelprize.org/uploads/2026/10/fig_fy_26_1x1-1024x1024.jpg" title="查看官方原图"><img src="assets/phy-neutrino.webp" width="1000" height="1000" alt="官方插图：一个高能中微子穿过南极冰层" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>图 2：穿过冰的那一瞬。</b>　中微子几乎不与任何东西发生作用，所以它能一路直穿；只有在极偶然的一刻撞上冰里的原子核，才会留下一小团蓝光——这就是 IceCube 要抓的东西。</div>
+    <div class="off">官方原题原文：An illustration of a high-energy neutrino passing through ice</div>
+    <div class="cr"><span>© Johan Jarnestad/The Royal Swedish Academy of Sciences</span></div>
+  </figcaption>
+</figure>
+<figure class="fig tall">
+  <a href="https://www.nobelprize.org/uploads/2026/10/fig3_fy_pop_en_26_copy.jpg" title="查看官方原图"><img src="assets/phy-messengers.webp" width="1400" height="2097" alt="官方插图：来自宇宙的信使——质子、伽马射线、中微子" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>图 3：为什么只能是中微子。</b>　从宇宙飞来的「信使」有三种：质子 p、伽马射线 γ、中微子 ν。质子在旅途中被磁场一路折弯，伽马射线会被尘埃挡住、也会在路上变弱——只有中微子不拐弯、不被挡，能指回老家。（图中还画了尘埃 Dust。）</div>
+    <div class="off">官方原题原文：Illustration: Messengers from space</div>
+    <div class="cr"><span>© Johan Jarnestad/The Royal Swedish Academy of Sciences</span></div>
+  </figcaption>
+</figure>
+<figure class="fig tall">
+  <a href="https://www.nobelprize.org/uploads/2026/10/fig2_fy_pop_en_26_copy.jpg" title="查看官方原图"><img src="assets/phy-observatory.webp" width="1500" height="1767" alt="官方插图：冰层之下的观测站，含南极地图、粒子与光、光学模块三部分" loading="lazy" decoding="async"></a>
+  <figcaption class="meta">
+    <div class="look"><b>图 4：整台「望远镜」长什么样。</b>　自上而下三块：① An observatory in the ice——南极冰盖之下的阵列与地面设施；② PARTICLES AND LIGHT——中微子在冰里撞出带电粒子，沿途发光，被记录下来；③ OPTICAL MODULES——核心零件的剖面：直径 35 厘米的玻璃外壳里装着传感器（Sensor），一根电缆（Cable）把它串到冰下。</div>
+    <div class="off">官方原题原文：Illustration: An observatory in the ice</div>
+    <div class="cr"><span>© Johan Jarnestad/The Royal Swedish Academy of Sciences</span></div>
+  </figcaption>
+</figure>
+    </div>
+    <h3 class="sec"><span class="lab">Why it matters</span><span class="zh">为什么重要</span></h3>
+        <div class="why">
+          <p>它开了一门新的天文学：<b>用中微子看宇宙</b>。光和射电会被尘埃挡住、被空间里的物质削弱，质子会拐弯，只有中微子能穿过一切、不改方向也不丢能量地把信息带出来。有些知识，除了它没有第二种办法拿到。</p>
+          <p>这条路上前人已经拿过两次诺贝尔奖：2002 年（戴维斯、小柴昌俊，证明中微子可以用来研究天体）和 2015 年（梶田隆章、麦克唐纳，发现中微子会「变身」）。</p>
+          <p>工程上也有副产品：为了造这台望远镜，人类才把南极冰不同深度的性质摸清楚。而且它证明了一个「听起来太疯狂」的想法，可以在三十多年里被一步步建成实物。</p>
+        </div>
+    <div class="cols" style="margin-top:34px">
+      <div>
+        <h3 class="sec"><span class="lab">Why it matters</span><span class="zh">为什么重要</span></h3>
+        <div class="why">
+          <p>它开了一门新的天文学：<b>用中微子看宇宙</b>。光和射电会被尘埃挡住、被空间里的物质削弱，质子会拐弯，只有中微子能穿过一切、不改方向也不丢能量地把信息带出来。有些知识，除了它没有第二种办法拿到。</p>
+          <p>这条路上前人已经拿过两次诺贝尔奖：2002 年（戴维斯、小柴昌俊，证明中微子可以用来研究天体）和 2015 年（梶田隆章、麦克唐纳，发现中微子会「变身」）。</p>
+          <p>工程上也有副产品：为了造这台望远镜，人类才把南极冰不同深度的性质摸清楚。而且它证明了一个「听起来太疯狂」的想法，可以在三十多年里被一步步建成实物。</p>
         </div>
       </div>
-
-      <div class="srcs">
-        <div class="k">Sources · 官方来源</div>
-        <div>· <a href="https://www.nobelprize.org/prizes/medicine/2026/summary/">获奖公告页 Summary</a> ｜ <a href="https://www.nobelprize.org/prizes/medicine/2026/press-release/">新闻稿 Press release</a> ｜ <a href="https://www.nobelprize.org/prizes/medicine/2026/popular-information/">面向公众的科普说明 Popular information</a>（本卡片主要依据）</div>
-      </div>
-    </div>
-  </article>
-
-  <!-- ══════════════ 物理学 ══════════════ -->
-  <article class="prize" id="physics">
-    <div class="top">
-      <div class="cat">
-        <span class="zh">物理学</span>
-        <span class="en">Physics</span>
-        <span class="date">2026-10-06 · Royal Swedish Academy of Sciences</span>
-      </div>
-      <h2>在南极，接住宇宙深处的隐身信使<span class="sub">Elusive particles from the universe captured at the South Pole</span></h2>
-      <blockquote class="cite">
-        <div class="tag">Official citation · 官方授奖引文</div>
-        <div class="en">“for decisive contributions to the IceCube Neutrino Observatory and the discovery of high-energy neutrinos of astrophysical origin”</div>
-        <div class="zh">表彰他对 IceCube 中微子天文台的决定性贡献，以及天体来源高能中微子的发现。</div>
-      </blockquote>
-    </div>
-    <div class="body">
-
-      <h3 class="sec"><span class="lab">In one line</span><span class="zh">一句话</span></h3>
-      <p class="lead">他提出用南极冰盖做一台「望远镜」。冰够厚够纯，中微子撞上冰里的原子核时会闪出一点蓝光——用 5160 个光传感器盯住这些闪光，就能回溯它在宇宙中的来处。</p>
-      <p class="lead-en">Halzen realised that a cubic kilometre of Antarctic ice could work as a telescope: catch the rare flash a neutrino makes when it collides with a nucleus, and you can trace it back to its source.</p>
-
-      <h3 class="sec"><span class="lab">The chain</span><span class="zh">因果链：为什么非得是冰，又非得是南极</span></h3>
-      <ol class="chain">
-        <li>宇宙里有「天然加速器」，能把质子加速到地球上任何加速器都达不到的能量。可是<b>质子带电，一路被磁场弯折</b>，到了地球已经指不回老家。<span class="en-inline"> Charged protons are bent by magnetic fields — their direction of arrival tells you nothing.</span></li>
-        <li>物理规律给出一个线索：把质子加速到极高能量的过程，<b>同时也会产生高能中微子</b>。中微子不带电，穿过磁场不拐弯、穿过物质几乎不损耗，能笔直地指回源头。</li>
-        <li>中微子极难被发现：每秒有 <b>650 亿个</b>太阳中微子穿过你的一片指甲盖，你毫无感觉。要靠它，得有一个巨大的「靶子」。<span class="en-inline"> 65 billion solar neutrinos pass through your fingernail every second.</span></li>
-        <li>当中微子偶尔撞上原子核，会生成带电粒子，沿途发出<b>蓝光</b>。水透明、能看见这种光，但要看得足够多，就需要极大的体积。</li>
-        <li>Halzen 换了个思路：用自然界现成的<b>冰</b>。他与同行在 1988 年的会议上首次提出在南极冰下建中微子天文台。<span class="en-inline"> First presented in 1988, at a conference in Poland.</span></li>
-        <li>南极有别人比不了的条件：那里已有科考站和运输保障；冰下恒暗、没有生物干扰、放射性极低、地质稳定没有地震。代价是<b>一年中大部分时间进不去</b>，施工只能挤在南极夏季（11 月到次年 2 月）。</li>
-        <li>施工办法是从冰川学家那里学来的：用热水「淋浴头」融出千米深的孔，再把挂着光传感器的缆绳放下去。Halzen 形容传感器是「倒过来的灯泡」——吸收光，转成电信号。</li>
-        <li>头几轮结果令人失望：上层冰里全是气泡，光被散射成一团。后来发现 <b>1400 米以下</b>的冰异常纯净，闪光能走 300 米才被吸收，比任何人预期的都远。</li>
-        <li>第一代装置 AMANDA 建到 2000 年 1 月，够用但不够大。于是上 IceCube：<b>一立方公里的冰、86 根缆、5160 个传感器</b>，2011 年完工。</li>
-        <li>难点在噪声：每天有一亿多个大气粒子穿透到传感器所在的深度；大气中微子每天也有几百个从北半球穿过整个地球进来。只能靠<b>统计特征</b>把天体来的挑出来。</li>
-        <li>2013 年公布首批证据，再过两年数据积累够了，才敢确定：<b>这些中微子确实来自地球之外</b>。<span class="en-inline"> First evidence in 2013; certainty a couple of years later.</span></li>
-        <li>今天候选源清单上最显眼的是活动星系 <b>NGC 1068（M77）</b>方向上的 79 个事件；研究人员也看到了来自<b>我们银河系内部</b>的高能中微子。下一步 IceCube-Gen2 是八立方公里的冰。</li>
-      </ol>
-
-      <figure>
-        <svg viewBox="0 0 720 240" role="img" aria-label="示意图：南极冰下的中微子望远镜如何工作">
-          <desc>冰面之下挂着多根缆绳，每根缆上串着光传感器。一个来自宇宙深处的中微子撞上冰中的原子核，发出蓝光闪光，被传感器记录下来。</desc>
-          <rect x="8" y="10" width="704" height="220" rx="4" fill="#ffffff" stroke="#e0ddd9"/>
-          <rect x="8" y="10" width="704" height="46" rx="4" fill="#eef3f8" stroke="#e0ddd9"/>
-          <rect x="8" y="40" width="704" height="16" rx="0" fill="#eef3f8"/>
-          <g stroke="#c3c8cd" stroke-width="2">
-            <line x1="120" y1="56" x2="120" y2="214"/>
-            <line x1="240" y1="56" x2="240" y2="214"/>
-            <line x1="360" y1="56" x2="360" y2="214"/>
-            <line x1="480" y1="56" x2="480" y2="214"/>
-            <line x1="600" y1="56" x2="600" y2="214"/>
-          </g>
-          <g fill="#8a8681">
-            <circle cx="120" cy="80" r="4"/><circle cx="120" cy="118" r="4"/><circle cx="120" cy="156" r="4"/><circle cx="120" cy="194" r="4"/>
-            <circle cx="240" cy="80" r="4"/><circle cx="240" cy="118" r="4"/><circle cx="240" cy="156" r="4"/><circle cx="240" cy="194" r="4"/>
-            <circle cx="360" cy="80" r="4"/><circle cx="360" cy="118" r="4"/><circle cx="360" cy="156" r="4"/><circle cx="360" cy="194" r="4"/>
-            <circle cx="480" cy="80" r="4"/><circle cx="480" cy="118" r="4"/><circle cx="480" cy="156" r="4"/><circle cx="480" cy="194" r="4"/>
-            <circle cx="600" cy="80" r="4"/><circle cx="600" cy="118" r="4"/><circle cx="600" cy="156" r="4"/><circle cx="600" cy="194" r="4"/>
-          </g>
-          <line x1="686" y1="70" x2="392" y2="168" stroke="#2370b8" stroke-width="2.5" stroke-dasharray="7 6"/>
-          <circle cx="386" cy="170" r="18" fill="#2370b8" opacity=".16" class="pulse"/>
-          <circle cx="386" cy="170" r="7" fill="#2370b8"/>
-          <circle cx="686" cy="70" r="5" fill="#2370b8"/>
-        </svg>
-        <ul class="figlegend two">
-          <li><span class="mk blue">A</span>冰面之上是南极科考站（图中浅色条带）</li>
-          <li><span class="mk">B</span>缆绳伸到冰下 1450–2450 米</li>
-          <li><span class="mk">C</span>每根缆上串着光传感器：共 5160 个，分挂 86 根缆</li>
-          <li><span class="mk blue">D</span>中微子撞上冰里的原子核，闪出蓝光（虚线为来路）</li>
-        </ul>
-        <figcaption>示意图（本页自绘，非官方插图）。<span class="en">Schematic drawn for this page — not an official illustration.</span>闪光的方向与亮度，被用来反推中微子在宇宙中的来处。</figcaption>
-      </figure>
-
-      <div class="cols" style="margin-top:34px">
-        <div>
-          <h3 class="sec"><span class="lab">Why it matters</span><span class="zh">为什么重要</span></h3>
-          <div class="why">
-            <p>它开了一门新的天文学：<b>用中微子看宇宙</b>。光和射电会被尘埃挡住、被空间里的物质削弱，质子会拐弯，只有中微子能穿过一切、不改方向也不丢能量地把信息带出来。有些知识，除了它没有第二种办法拿到。</p>
-            <p>这条路上前人已经拿过两次诺贝尔奖：2002 年（戴维斯、小柴昌俊，证明中微子可以用来研究天体）和 2015 年（梶田隆章、麦克唐纳，发现中微子会「变身」）。</p>
-            <p>工程上也有副产品：为了造这台望远镜，人类才把南极冰不同深度的性质摸清楚。而且它证明了一个「听起来太疯狂」的想法，可以在三十多年里被一步步建成实物。</p>
-          </div>
-        </div>
-        <div>
-          <h3 class="sec"><span class="lab">Laureate</span><span class="zh">得主</span></h3>
-          <div class="people">
-            <div class="person">
-              <div class="nm">Francis Halzen<span class="zh">弗朗西斯·哈尔岑</span></div>
-              <div class="aff">威斯康星大学麦迪逊分校（美国）<span class="en">University of Wisconsin–Madison, USA</span></div>
-              <div class="bio">b. 1944, Tienen, Belgium · PhD 1969 (KU Leuven)</div>
-            </div>
-          </div>
-          <h3 class="sec"><span class="lab">Key numbers</span><span class="zh">关键数字</span></h3>
-          <div class="facts">
-            <div class="fact"><div class="n">65 bn</div><div class="l">每秒穿过一片指甲盖的太阳中微子<span class="en">solar neutrinos per second</span></div></div>
-            <div class="fact"><div class="n">5160</div><div class="l">冰下光传感器数量，分挂 86 根缆<span class="en">light sensors on 86 strings</span></div></div>
-            <div class="fact"><div class="n">1 km³</div><div class="l">IceCube 使用的冰体积<span class="en">ice instrumented</span></div></div>
-            <div class="fact"><div class="n">8 km³</div><div class="l">下一代 IceCube-Gen2 的规模<span class="en">next-generation array</span></div></div>
-          </div>
+      <div>
+        <h3 class="sec" id="physics-people"><span class="lab">Laureates</span><span class="zh">得主（1 位 · 官方肖像）</span></h3>
+        <div class="people">
+<div class="person">
+  <img src="assets/p-halzen.webp" width="600" height="900" alt="Francis Halzen" loading="lazy" decoding="async" class="ph">
+  <div>
+    <div class="nm">Francis Halzen<span class="zh">弗朗西斯·哈尔岑</span></div>
+    <div class="aff">威斯康星大学麦迪逊分校（美国）<span class="en">University of Wisconsin–Madison, USA</span></div>
+    <div class="bio">b. 1944, Tienen, Belgium · PhD 1969 (KU Leuven) · 获奖份额 1/1（独得）</div>
+  </div>
+  <div class="pcr">Ill. Niklas Elmehed © Nobel Prize Outreach</div>
+</div>
         </div>
       </div>
-
-      <div class="srcs">
-        <div class="k">Sources · 官方来源</div>
-        <div>· <a href="https://www.nobelprize.org/prizes/physics/2026/summary/">获奖公告页 Summary</a> ｜ <a href="https://www.nobelprize.org/prizes/physics/2026/press-release/">新闻稿 Press release</a> ｜ <a href="https://www.nobelprize.org/prizes/physics/2026/popular-information/">面向公众的科普说明 Popular information</a>（本卡片主要依据）</div>
+    </div>
+    <div class="facts-band">
+      <h3 class="sec"><span class="lab">Key numbers</span><span class="zh">关键数字</span></h3>
+      <div class="facts">
+        <div class="fact"><div class="n">65 bn</div><div class="l">每秒穿过一片指甲盖的太阳中微子<span class="en">solar neutrinos per second</span></div></div>
+        <div class="fact"><div class="n">5160</div><div class="l">冰下光传感器数量，分挂 86 根缆<span class="en">light sensors on 86 strings</span></div></div>
+        <div class="fact"><div class="n">1 km³</div><div class="l">IceCube 使用的冰体积<span class="en">ice instrumented</span></div></div>
+        <div class="fact"><div class="n">8 km³</div><div class="l">下一代 IceCube-Gen2 的规模<span class="en">next-generation array</span></div></div>
       </div>
     </div>
-  </article>
-
-  <!-- ══════════════ 待揭晓 ══════════════ -->
-  <section id="pending">
-    <h2 class="sec-label"><span class="lab">Pending</span><span class="zh">尚未揭晓 · 4 项</span></h2>
-    <div class="wait-grid">
-      <article class="wait">
-        <div class="cat"><span class="zh">化学</span><span class="en">Chemistry</span></div>
-        <h2>化学<span class="sub">Chemistry</span></h2>
-        <div class="en" style="font-style:italic; font-size:13px; color:var(--ink-3)">10-07 · Royal Swedish Academy of Sciences</div>
-        <p>诺贝尔奖一贯的做法是：公布的那一刻才同时发布得主与授奖引文，之前不透露任何信息。</p>
-        <span class="stamp">Awaiting announcement · 待官方公布</span>
-      </article>
-      <article class="wait">
-        <div class="cat"><span class="zh">文学</span><span class="en">Literature</span></div>
-        <h2>文学<span class="sub">Literature</span></h2>
-        <div class="en" style="font-style:italic; font-size:13px; color:var(--ink-3)">10-08 · Swedish Academy</div>
-        <p>文学奖的候选人名单有 50 年保密期。公布之前，外界流传的所有「名单」都不是官方信息。</p>
-        <span class="stamp">Awaiting announcement · 待官方公布</span>
-      </article>
-      <article class="wait">
-        <div class="cat"><span class="zh">和平</span><span class="en">Peace</span></div>
-        <h2>和平<span class="sub">Peace</span></h2>
-        <div class="en" style="font-style:italic; font-size:13px; color:var(--ink-3)">10-09 · Norwegian Nobel Committee, Oslo</div>
-        <p>唯一在奥斯陆颁发的奖，由挪威诺贝尔委员会决定。</p>
-        <span class="stamp">Awaiting announcement · 待官方公布</span>
-      </article>
-      <article class="wait">
-        <div class="cat"><span class="zh">经济学</span><span class="en">Economic Sciences</span></div>
-        <h2>经济学<span class="sub">Economic Sciences</span></h2>
-        <div class="en" style="font-style:italic; font-size:13px; color:var(--ink-3)">10-12 · Royal Swedish Academy of Sciences</div>
-        <p>正式名称是「瑞典中央银行纪念阿尔弗雷德·诺贝尔经济学奖」，1969 年才设立，比其他五项晚。</p>
-        <span class="stamp">Awaiting announcement · 待官方公布</span>
-      </article>
+    <h3 class="sec" id="physics-video"><span class="lab">Official video</span><span class="zh">官方影像 · 得主本人怎么说</span></h3>
+    <div class="vids">
+<a class="vid" href="https://www.youtube.com/watch?v=cSSFOX8BUrs" target="_blank" rel="noopener noreferrer">
+  <span class="play">▶</span>
+  <span><span class="t">Halzen：「在所有风险之外……这才是项目真正做成的关键，而那是纯粹的运气」</span><span class="s">官方电话采访（英文）· 在意大利贝加莫的酒店房间里接到消息</span></span>
+  <span class="ext">YouTube · 7 min</span>
+</a>
     </div>
-  </section>
+    <p class="lead-en" style="margin-top:12px">Videos are hosted by the Nobel Prize on YouTube; the same interviews are also on nobelprize.org (linked under Sources) with full transcripts. YouTube 在中国大陆需要国际网络环境才能播放；官方页面上的访谈文字稿不受影响。</p>
+    <div class="srcs" id="physics-srcs">
+      <div class="k">Sources · 官方来源</div>
+      <div><a href="https://www.nobelprize.org/prizes/physics/2026/summary/">获奖公告页 Summary</a> ｜ <a href="https://www.nobelprize.org/prizes/physics/2026/press-release/">新闻稿 Press release</a> ｜ <a href="https://www.nobelprize.org/prizes/physics/2026/popular-information/">面向公众的科普说明 Popular information</a> ｜ <a href="https://www.nobelprize.org/uploads/2026/10/advanced-physicsprize2026.pdf">进阶科学说明 Scientific background（PDF）</a> ｜ <a href="https://www.nobelprize.org/prizes/physics/2026/halzen/facts/">得主主页与电话采访</a></div>
+    </div>
+  </div>
+</article>
+
+<section id="pending" class="pending">
+  <h2 class="sec-label"><span class="lab">Pending</span><span class="zh">尚未揭晓 · 4 项（公布前不做任何猜测）</span></h2>
+  <div class="wait-grid">
+    <article class="wait" id="chemistry">
+      <div class="cat"><span class="zh">化学</span><span class="en">Chemistry</span></div>
+      <h2>化学奖<span class="sub">Chemistry</span></h2>
+      <div class="en" style="font-style:italic; font-size:13px; color:var(--ink-3)">10-07 · 瑞典皇家科学院</div>
+      <p>诺贝尔奖一贯的做法是：公布的那一刻才同时发布得主与授奖引文，之前不透露任何信息。</p>
+      <span class="stamp">Awaiting announcement · 待官方公布</span>
+    </article>
+    <article class="wait" id="literature">
+      <div class="cat"><span class="zh">文学</span><span class="en">Literature</span></div>
+      <h2>文学奖<span class="sub">Literature</span></h2>
+      <div class="en" style="font-style:italic; font-size:13px; color:var(--ink-3)">10-08 · 瑞典学院</div>
+      <p>文学奖的候选人名单有 50 年保密期。公布之前，外界流传的所有「名单」都不是官方信息。</p>
+      <span class="stamp">Awaiting announcement · 待官方公布</span>
+    </article>
+    <article class="wait" id="peace">
+      <div class="cat"><span class="zh">和平</span><span class="en">Peace</span></div>
+      <h2>和平奖<span class="sub">Peace</span></h2>
+      <div class="en" style="font-style:italic; font-size:13px; color:var(--ink-3)">10-09 · 挪威诺贝尔委员会（奥斯陆）</div>
+      <p>唯一在奥斯陆颁发的奖，由挪威诺贝尔委员会决定。</p>
+      <span class="stamp">Awaiting announcement · 待官方公布</span>
+    </article>
+    <article class="wait" id="economics">
+      <div class="cat"><span class="zh">经济学</span><span class="en">Economic Sciences</span></div>
+      <h2>经济学奖<span class="sub">Economic Sciences</span></h2>
+      <div class="en" style="font-style:italic; font-size:13px; color:var(--ink-3)">10-12 · 瑞典皇家科学院</div>
+      <p>正式名称是「瑞典中央银行纪念阿尔弗雷德·诺贝尔经济学奖」，1969 年才设立，比其他五项晚。</p>
+      <span class="stamp">Awaiting announcement · 待官方公布</span>
+    </article>
+  </div>
+</section>
+
+<section id="rights" class="rights">
+  <h2 class="sec-label"><span class="lab">Images &amp; permissions</span><span class="zh">图片来源与授权 · 官方条款原文</span></h2>
+  <div class="terms">
+    <div class="term"><div class="tt">科普插图</div><div class="en">The illustrations are free to use for non-commercial purposes. Attribute “© The Nobel Committee for Physiology or Medicine. Ill. Mattias Karlén” / “© Johan Jarnestad/The Royal Swedish Academy of Sciences”.</div><div class="zh">官方新闻稿原文：科普插图<b>可免费用于非商业用途</b>，须标注相应署名。本页据此使用，并在每张图下保留完整署名行。</div></div>
+    <div class="term"><div class="tt">得主肖像</div><div class="en">Strictly editorial use of these photographs is allowed provided that the copyright notice connected to the image is applied along with the name of the photographer. The permission does not include the right to sublicense use of the photographs. This permission is free of charge.</div><div class="zh">官方「媒体用图」页原文：这些图片<b>可在严格编辑用途下免费使用</b>，须保留图片附带的版权声明与作者名；<b>不包含转授权</b>（不得再授权他人使用）。</div></div>
+    <div class="term"><div class="tt">本页的处理</div><div class="en">—</div><div class="zh">图片均<b>直接取自 nobelprize.org 官方原图</b>，仅做等比缩放与格式转换（转 WebP 以便手机加载更快），不改内容、不裁切、不加字；每张图保留官方原标题（英文）与署名行，并给出可点开的官方原图链接。版权归原权利人所有，本页为<b>非商业</b>的教育用途页面。</div></div>
+  </div>
+</section>
 
   <footer id="sources">
     <h3>How this page was made · 本页的取材纪律</h3>
     <p>· <b>已揭晓的奖项</b>：全部事实取自诺贝尔奖官方公告页、官方新闻稿与官方「面向公众的科普说明」，不做二次演绎。授奖引文保留英文原句，中文为转述。<span class="en">Every fact comes from the official announcement, press release or popular-information page; the citation is quoted verbatim in English.</span></p>
     <p>· <b>未揭晓的奖项</b>：只写日期与颁奖机构，不填内容。<span class="en">Pending prizes show only the date and the awarding body.</span></p>
+    <p>· <b>图片</b>：<b>17 张全部来自 nobelprize.org 官方原图</b>——科普插图为 Mattias Karlén（诺贝尔生理学或医学委员会）与 Johan Jarnestad（瑞典皇家科学院）绘制，得主肖像为 Niklas Elmehed 绘（© Nobel Prize Outreach）；本页仅等比缩放与转码，署名逐张保留。官方条款原文见上方「图片来源与授权」。<span class="en">17 images, all official artwork from nobelprize.org, credited per figure.</span></p>
     <p>· <b>揭晓日期</b>取自官方数据接口 <code>api.nobelprize.org/2.1/nobelPrizes?nobelPrizeYear=2026</code> 的 <code>dateAwarded</code> 字段，逐条核对。</p>
-    <p>· <b>示意图</b>为本页自绘（SVG），仅示意原理，不是官方插图；本页不使用官方肖像图。</p>
-    <p>· <b>技术</b>：单文件、零第三方依赖（不加载任何外部字体、脚本或图片），手机 / 平板 / 桌面三档布局。</p>
-    <p style="margin-top:16px">数据与引文版权归 © The Nobel Foundation / Nobel Prize Outreach 及各颁奖机构所有。本页为非商业用途的中文科普转述，配色与版式取自诺贝尔奖官网公开的设计变量（<code>--nobel-gold</code> <code>--berlin-blue</code>）。</p>
+    <p>· <b>影像</b>：官方电话采访（YouTube 托管）；文字稿在官方得主页上，不受网络环境影响。</p>
+    <p>· <b>技术</b>：无外部字体、无 CDN、无追踪脚本，仅 17 张本地自托管图片 + 一个 HTML 文件；手机 / 平板 / 桌面三档布局，支持深色模式。</p>
+    <p style="margin-top:16px">数据与图片版权归 © The Nobel Foundation / Nobel Prize Outreach、瑞典皇家科学院及各位作者所有。本页为<b>非商业</b>教育用途的中文科普转述；页面配色与版式取自诺贝尔奖官网公开的设计变量（<code>--nobel-gold</code> <code>--berlin-blue</code>）。</p>
   </footer>
 
 </main>
 
+<button id="toTop" title="回到目录" aria-label="回到目录">↑</button>
+
 <script>
   (function () {
     var bar = document.getElementById('progress');
+    var top = document.getElementById('toTop');
     function onScroll() {
       var h = document.documentElement.scrollHeight - window.innerHeight;
       var p = h > 0 ? (window.scrollY / h) * 100 : 0;
       bar.style.width = Math.min(100, Math.max(0, p)) + '%';
+      if (window.scrollY > 600) { top.classList.add('show'); } else { top.classList.remove('show'); }
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     onScroll();
+    top.addEventListener('click', function () {
+      document.getElementById('toc').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // 导航高亮（scroll-spy）：用 IntersectionObserver，无依赖
+    var links = {};
+    document.querySelectorAll('nav.top .links a').forEach(function (a) { links[a.dataset.nav] = a; });
+    var targets = document.querySelectorAll('#schedule, article.prize, #pending, #sources');
+    if ('IntersectionObserver' in window && targets.length) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var id = e.target.id;
+          Object.keys(links).forEach(function (k) {
+            links[k].classList.toggle('on', k === id || (id === 'sources' && k === 'sources'));
+          });
+        });
+      }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+      targets.forEach(function (t) { io.observe(t); });
+    }
   })();
 </script>
 </body>
