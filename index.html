@@ -210,15 +210,15 @@
   nav.top .brand{border-bottom:none}
   nav.top .links a.on{color:#fff; background:rgba(255,255,255,.18)}
   /* 「三」按钮：桌面隐藏，手机显示 */
-  nav.top .burger{display:none; align-items:center; justify-content:center;
+  nav.top .burger{display:none; flex-direction:column; align-items:center; justify-content:center; gap:4px;
     width:44px; height:44px; margin-left:auto; padding:0; border:0; border-radius:var(--radius);
-    background:transparent; color:#fff; cursor:pointer}
-  nav.top .burger .ico{display:block; fill:currentColor; transition:opacity .16s ease}
-  nav.top .burger .ico-x{display:none}
-  nav.top .burger[aria-expanded="true"]{background:rgba(255,255,255,.16)}
-  nav.top .burger[aria-expanded="true"] .ico-menu{display:none}
-  nav.top .burger[aria-expanded="true"] .ico-x{display:block}
-  nav.top .burger:hover{background:rgba(255,255,255,.12)}
+    background:transparent; cursor:pointer}
+  nav.top .burger .bg-bar{display:block; width:19px; height:2px; background:#fff; border-radius:2px;
+    transition:transform .18s ease, opacity .18s ease}
+  nav.top .burger[aria-expanded="true"]{background:rgba(255,255,255,.14)}
+  nav.top .burger[aria-expanded="true"] .bg-bar:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  nav.top .burger[aria-expanded="true"] .bg-bar:nth-child(2){opacity:0}
+  nav.top .burger[aria-expanded="true"] .bg-bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
   /* 满屏面板（位置/尺寸照 nobelprize.org 手机端：紧贴顶栏下方，占满剩余全屏，面板内滚动） */
   .mscrim{position:fixed; inset:0; background:rgba(0,0,0,.42); z-index:48}
@@ -279,7 +279,7 @@
     .sm-list{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
   }
   @media (prefers-reduced-motion:reduce){
-    nav.top .burger .ico{transition:none}
+    nav.top .burger .bg-bar{transition:none}
   }
 
   /* 目录 */
@@ -523,17 +523,7 @@
     <a class="brand" href="#top">2026 诺贝尔奖 <b>Nobel Prize</b></a>
     <div class="links"><a href="#schedule" data-nav="schedule">总览<span class="en">Overview</span></a><a href="#medicine" data-nav="medicine">医学厅<span class="en">Physiology or Medicine</span></a><a href="#physics" data-nav="physics">物理厅<span class="en">Physics</span></a><a href="#pending" data-nav="pending">待揭晓<span class="en">Still to come</span></a><a href="#map" data-nav="map">学科地图<span class="en">A map of the halls</span></a><a href="#sources" data-nav="sources">本馆说明<span class="en">About this page</span></a></div>
     <button class="burger" type="button" aria-label="打开导航目录" aria-expanded="false"
-            aria-controls="mnav">
-      <svg class="ico ico-menu" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
-        <circle cx="4.1" cy="6" r="1.5"/><rect x="8.2" y="4.9" width="12.6" height="2.2" rx="1.1"/>
-        <circle cx="4.1" cy="12" r="1.5"/><rect x="8.2" y="10.9" width="12.6" height="2.2" rx="1.1"/>
-        <circle cx="4.1" cy="18" r="1.5"/><rect x="8.2" y="16.9" width="8.6" height="2.2" rx="1.1"/>
-      </svg>
-      <svg class="ico ico-x" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
-        <rect x="3.4" y="10.9" width="17.2" height="2.2" rx="1.1" transform="rotate(45 12 12)"/>
-        <rect x="3.4" y="10.9" width="17.2" height="2.2" rx="1.1" transform="rotate(-45 12 12)"/>
-      </svg>
-    </button>
+            aria-controls="mnav"><span class="bg-bar"></span><span class="bg-bar"></span><span class="bg-bar"></span></button>
   </div>
 </nav>
 
