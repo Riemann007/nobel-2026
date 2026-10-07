@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2026 诺贝尔奖 · 六天六个奖｜官方一手来源中文速览</title>
+<meta name="description" content="2026 年诺贝尔奖 10 月 5 日至 12 日陆续揭晓。每一条内容都取自诺贝尔奖官方一手来源，中文转述，面向中学生。">
+<style>
+  :root{
+    --bg:#f4f7fa;
+    --card:#ffffff;
+    --ink:#141c26;
+    --ink-2:#46536a;
+    --ink-3:#78859b;
+    --line:#dde5ee;
+    --line-2:#eef3f9;
+    --med:#2456c8;
+    --med-soft:#e8efff;
+    --phy:#0b7f8c;
+    --phy-soft:#e2f4f6;
+    --wait:#8892a4;
+    --wait-soft:#eef1f6;
+    --radius:16px;
+    --radius-sm:10px;
+    --shadow:0 1px 2px rgba(20,28,38,.04), 0 8px 24px -12px rgba(20,28,38,.14);
+    --maxw:1080px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1620; --card:#151f2b; --ink:#eaf0f7; --ink-2:#b3c0d2; --ink-3:#8595ab;
+      --line:#26333f; --line-2:#1d2836;
+      --med:#7aa2ff; --med-soft:#1a2540;
+      --phy:#4fd0d8; --phy-soft:#123037;
+      --wait:#7d8ba0; --wait-soft:#1c2632;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+    font-size:16px; line-height:1.75; letter-spacing:.01em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+  a{color:inherit; text-decoration:none}
+  a:hover{text-decoration:underline}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+  /* ── header ── */
+  header{padding:56px 0 28px}
+  .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; letter-spacing:.08em; color:var(--ink-3);
+    border:1px solid var(--line); border-radius:999px; padding:5px 12px; background:var(--card);
+  }
+  .kicker b{color:var(--ink-2); font-weight:600}
+  h1{
+    font-size:clamp(28px,6.2vw,46px); line-height:1.22; letter-spacing:-.015em;
+    margin:20px 0 12px; font-weight:700;
+  }
+  h1 .thin{display:block; font-size:.46em; letter-spacing:.14em; font-weight:600; color:var(--ink-3); margin-bottom:10px}
+  .lede{font-size:clamp(15px,3.6vw,17.5px); color:var(--ink-2); max-width:46em; margin:0 0 18px}
+  .meta-row{display:flex; flex-wrap:wrap; gap:10px 22px; font-size:13.5px; color:var(--ink-3); border-top:1px solid var(--line); padding-top:16px}
+  .meta-row b{color:var(--ink-2); font-weight:600}
+
+  /* ── timeline ── */
+  .tl{margin:8px 0 44px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px; box-shadow:var(--shadow)}
+  .tl h2{font-size:13px; letter-spacing:.12em; color:var(--ink-3); margin:0 0 18px; font-weight:600}
+  .tl-track{display:grid; grid-template-columns:repeat(6,1fr); gap:10px}
+  .tl-node{position:relative; padding-top:16px}
+  .tl-node::before{content:""; position:absolute; top:0; left:0; right:0; height:2px; background:var(--line)}
+  .tl-node:first-child::before{border-radius:2px 0 0 2px}
+  .tl-node:last-child::before{border-radius:0 2px 2px 0}
+  .tl-node.done::before{background:var(--node,var(--med))}
+  .dot{position:absolute; top:-4px; left:50%; transform:translateX(-50%); width:10px; height:10px; border-radius:50%; background:#fff; border:2px solid var(--line)}
+  .tl-node.done .dot{background:var(--node,var(--med)); border-color:var(--node,var(--med))}
+  .tl-node.today .dot{box-shadow:0 0 0 5px color-mix(in srgb, var(--node) 22%, transparent)}
+  .tl-date{font-size:12.5px; color:var(--ink-3); font-variant-numeric:tabular-nums; text-align:center}
+  .tl-name{font-size:14px; font-weight:600; text-align:center; color:var(--ink-2); margin-top:2px}
+  .tl-node.done .tl-name{color:var(--ink)}
+  .tl-state{font-size:11.5px; text-align:center; color:var(--ink-3); margin-top:2px}
+  @media (max-width:640px){
+    .tl-track{grid-template-columns:1fr; gap:0}
+    .tl-node{padding:0 0 0 26px; min-height:52px}
+    .tl-node::before{top:0; bottom:0; left:5px; right:auto; width:2px; height:auto}
+    .tl-node:last-child::before{bottom:calc(100% - 20px)}
+    .dot{top:6px; left:5px; transform:translateX(-50%)}
+    .tl-date,.tl-name,.tl-state{text-align:left; padding-left:6px}
+    .tl-date{margin-top:-4px}
+  }
+
+  /* ── prize card ── */
+  .prize{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); overflow:hidden; margin-bottom:26px; --acc:var(--med); --acc-soft:var(--med-soft);
+  }
+  .prize.phy{--acc:var(--phy); --acc-soft:var(--phy-soft)}
+  .prize.wait{--acc:var(--wait); --acc-soft:var(--wait-soft)}
+  .prize-top{
+    padding:22px 22px 20px; border-bottom:1px solid var(--line-2);
+    background:linear-gradient(180deg, var(--acc-soft) 0%, transparent 100%);
+  }
+  .badge{
+    display:inline-block; font-size:12px; font-weight:700; letter-spacing:.1em;
+    color:var(--acc); background:var(--card); border:1px solid color-mix(in srgb, var(--acc) 30%, transparent);
+    border-radius:999px; padding:3px 11px;
+  }
+  .prize-top h2{font-size:clamp(20px,4.6vw,27px); line-height:1.3; margin:14px 0 6px; letter-spacing:-.01em}
+  .prize-top .date{font-size:13.5px; color:var(--ink-3); font-variant-numeric:tabular-nums}
+  .quote{
+    margin:16px 0 0; padding:14px 16px; border-left:3px solid var(--acc);
+    background:color-mix(in srgb, var(--acc) 6%, transparent); border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  }
+  .quote .en{font-size:14.5px; color:var(--ink-2); font-style:italic}
+  .quote .zh{font-size:14.5px; color:var(--ink); margin-top:6px; font-weight:500}
+  .quote .src{font-size:12px; color:var(--ink-3); margin-top:8px; letter-spacing:.02em}
+
+  .prize-body{padding:22px}
+  .cols{display:grid; grid-template-columns:1.55fr 1fr; gap:28px; align-items:start}
+  @media (max-width:900px){ .cols{grid-template-columns:1fr; gap:22px} }
+
+  h3.sec{
+    font-size:13px; letter-spacing:.1em; color:var(--ink-3); font-weight:700;
+    margin:0 0 12px; padding-bottom:8px; border-bottom:1px solid var(--line-2);
+  }
+  h3.sec:not(:first-child){margin-top:26px}
+  p{margin:0 0 12px}
+  .prose p{color:var(--ink-2)}
+  .prose strong{color:var(--ink); font-weight:600}
+
+  /* causal chain */
+  ol.chain{list-style:none; counter-reset:c; margin:0; padding:0}
+  ol.chain li{
+    counter-increment:c; position:relative; padding:0 0 16px 34px; font-size:14.8px; color:var(--ink-2);
+  }
+  ol.chain li::before{
+    content:counter(c); position:absolute; left:0; top:1px; width:22px; height:22px; border-radius:50%;
+    background:var(--acc-soft); color:var(--acc); font-size:12px; font-weight:700;
+    display:flex; align-items:center; justify-content:center; font-variant-numeric:tabular-nums;
+  }
+  ol.chain li::after{
+    content:""; position:absolute; left:10.5px; top:26px; bottom:2px; width:1px; background:var(--line);
+  }
+  ol.chain li:last-child{padding-bottom:0}
+  ol.chain li:last-child::after{display:none}
+  ol.chain b{color:var(--ink); font-weight:600}
+
+  /* laureate cards */
+  .people{display:grid; gap:12px}
+  .person{border:1px solid var(--line); border-radius:var(--radius-sm); padding:13px 14px; background:var(--bg)}
+  .person .nm{font-size:15px; font-weight:700; letter-spacing:-.01em}
+  .person .nm .cn{display:block; font-size:12.5px; font-weight:500; color:var(--ink-3); letter-spacing:.04em; margin-top:1px}
+  .person .aff{font-size:13px; color:var(--ink-2); margin-top:7px; line-height:1.6}
+  .person .bio{font-size:12.5px; color:var(--ink-3); margin-top:5px; font-variant-numeric:tabular-nums}
+
+  /* facts */
+  .facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; margin:0 0 4px}
+  .fact{background:var(--bg); border:1px solid var(--line); border-radius:var(--radius-sm); padding:12px 13px}
+  .fact .n{font-size:clamp(19px,4.4vw,24px); font-weight:700; color:var(--acc); letter-spacing:-.02em; font-variant-numeric:tabular-nums; line-height:1.15}
+  .fact .l{font-size:12.5px; color:var(--ink-3); margin-top:5px; line-height:1.5}
+
+  .why{border-left:3px solid var(--acc); padding:2px 0 2px 14px; margin-top:4px}
+  .why p{color:var(--ink-2); font-size:14.8px; margin-bottom:10px}
+  .why p:last-child{margin-bottom:0}
+
+  figure{margin:22px 0 0}
+  figure svg{width:100%; height:auto; display:block; border-radius:var(--radius-sm); background:var(--bg); border:1px solid var(--line)}
+  figcaption{font-size:12.5px; color:var(--ink-3); margin-top:9px; line-height:1.6}
+  ul.figlegend{list-style:none; margin:12px 0 0; padding:0; display:grid; gap:8px 18px; grid-template-columns:repeat(3,1fr)}
+  ul.figlegend.two{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:760px){ ul.figlegend, ul.figlegend.two{grid-template-columns:1fr} }
+  ul.figlegend li{font-size:13.5px; color:var(--ink-2); line-height:1.65; position:relative; padding-left:24px}
+  ul.figlegend li .mk{position:absolute; left:0; top:2px; width:17px; height:17px; border-radius:50%; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; background:var(--acc-soft); color:var(--acc)}
+  ul.figlegend li .mk.sq{border-radius:5px}
+  svg text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif}
+
+  .srcs{margin-top:20px; padding-top:14px; border-top:1px dashed var(--line); font-size:13px; color:var(--ink-3); line-height:1.9}
+  .srcs a{color:var(--ink-2); border-bottom:1px solid var(--line)}
+  .srcs .k{color:var(--ink-3)}
+
+  /* waiting grid */
+  .wait-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px}
+  .wait-grid .prize{margin-bottom:0}
+  .wait-grid .prize-body{padding:16px 18px}
+  .wait-grid h2{font-size:19px}
+  .wait-note{font-size:13.5px; color:var(--ink-3); margin:0}
+  .wait-note b{color:var(--ink-2); font-weight:600}
+  .stamp{
+    display:inline-block; margin-top:12px; font-size:12px; letter-spacing:.08em; color:var(--wait);
+    border:1px dashed color-mix(in srgb, var(--wait) 45%, transparent); border-radius:999px; padding:3px 10px;
+  }
+
+  /* notice + footer */
+  .notice{
+    background:var(--card); border:1px solid var(--line); border-left:3px solid var(--med);
+    border-radius:var(--radius-sm); padding:16px 18px; margin:0 0 30px; font-size:14px; color:var(--ink-2);
+  }
+  .notice b{color:var(--ink)}
+  footer{padding:34px 0 56px; color:var(--ink-3); font-size:13px; border-top:1px solid var(--line); margin-top:8px}
+  footer p{margin:0 0 6px}
+  .totop{display:inline-block; margin-top:14px; font-size:13px}
+
+  @media (prefers-reduced-motion: no-preference){
+    .pulse{animation:pulse 2.6s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.25} 50%{opacity:1}}
+  }
+  @media print{
+    body{background:#fff}
+    .prize,.tl{box-shadow:none; break-inside:avoid}
+    .totop{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">NOBEL PRIZE <b>2026</b> · 10 月 5 日 – 12 日</span>
+  <h1><span class="thin">六天，六个奖</span>2026 年诺贝尔奖<br>官方一手来源 · 中文速览</h1>
+  <p class="lede">每个奖一条线索：官方为什么颁给它、得主做了什么、这件事为什么重要。所有事实取自诺贝尔奖官方页面与官方数据接口，未揭晓的奖项留白，不做任何猜测填充。</p>
+  <div class="meta-row">
+    <span><b>来源</b> nobelprize.org（官方）· api.nobelprize.org（官方接口）</span>
+    <span><b>读者</b> 中学阶段 · 中文转述</span>
+    <span><b>本页更新</b> <time id="ts" datetime="2026-10-07">2026-10-07</time></span>
+  </div>
+</header>
+
+<section class="tl" aria-label="2026 年诺贝尔奖揭晓时间表">
+  <h2>揭晓时间表</h2>
+  <div class="tl-track">
+    <div class="tl-node done" style="--node:var(--med)"><span class="dot"></span><div class="tl-date">10 月 5 日</div><div class="tl-name">生理学或医学</div><div class="tl-state">已揭晓</div></div>
+    <div class="tl-node done" style="--node:var(--phy)"><span class="dot"></span><div class="tl-date">10 月 6 日</div><div class="tl-name">物理学</div><div class="tl-state">已揭晓</div></div>
+    <div class="tl-node today" style="--node:var(--wait)"><span class="dot"></span><div class="tl-date">10 月 7 日</div><div class="tl-name">化学</div><div class="tl-state">今日揭晓</div></div>
+    <div class="tl-node" style="--node:var(--wait)"><span class="dot"></span><div class="tl-date">10 月 8 日</div><div class="tl-name">文学</div><div class="tl-state">待揭晓</div></div>
+    <div class="tl-node" style="--node:var(--wait)"><span class="dot"></span><div class="tl-date">10 月 9 日</div><div class="tl-name">和平</div><div class="tl-state">待揭晓</div></div>
+    <div class="tl-node" style="--node:var(--wait)"><span class="dot"></span><div class="tl-date">10 月 12 日</div><div class="tl-name">经济学</div><div class="tl-state">待揭晓</div></div>
+  </div>
+</section>
+
+<div class="notice">
+  <p><b>读之前先知道两件事。</b></p>
+  <p>① 揭晓顺序与日期来自诺贝尔奖官方数据接口（<code>dateAwarded</code> 字段），逐条核对；每个奖的授奖引文都是官方英文原句，附中文转述，方便你对照原文。</p>
+  <p>② 化学、文学、和平、经济学四项<strong>尚未公布</strong>，本页不放任何「据说」「可能」之类的内容。官方的规矩是公布那一刻才同时发布得主与引文，之前谁都不知道。</p>
+</div>
+
+<!-- ══════════ 生理学或医学 ══════════ -->
+<article class="prize med">
+  <div class="prize-top">
+    <span class="badge">生理学或医学 · 已揭晓</span>
+    <h2>给神经细胞装一个"光开关"</h2>
+    <div class="date">2026 年 10 月 5 日 · 卡罗林斯卡学院诺贝尔大会</div>
+    <blockquote class="quote">
+      <div class="en">"for their discoveries concerning light-gated ion channels and optogenetics"</div>
+      <div class="zh">表彰他们关于光门控离子通道与光遗传学的发现。</div>
+      <div class="src">诺贝尔奖官方授奖引文（英文原句）</div>
+    </blockquote>
+  </div>
+  <div class="prize-body">
+
+    <h3 class="sec">一句话</h3>
+    <p class="prose">他们从一种会"追光"的单细胞绿藻身上，找到了一枚能被光打开的蛋白通道，再把它装进神经细胞。从此，研究人员可以用一束蓝光，点名开关某一种神经细胞，看清它是干什么用的。</p>
+
+    <h3 class="sec">因果链：从一颗藻到一个大脑开关</h3>
+    <ol class="chain">
+      <li>1990 年代初，Hegemann 问了一个简单问题：单细胞绿藻 <i>Chlamydomonas</i> 为什么能那么快地朝光游？</li>
+      <li>他用电极测：光打到藻的"眼点"后，<b>0.5 毫秒</b>就出电信号。而人眼从感光到出信号，至少要 <b>10 毫秒</b>，慢了二十多倍。</li>
+      <li>他猜：藻里可能是<b>一个蛋白同时干两件事</b>，既感光、又是离子通道。当时没人见过这种通道，同行普遍怀疑。</li>
+      <li>藻的感光蛋白一离开活细胞就散架。等到日本团队测出藻的基因图谱，Hegemann 从几千个基因里挑出两个候选，交给同事 Nagel。</li>
+      <li>Nagel 把这两个基因分别注射进<b>青蛙卵细胞</b>，让卵细胞大量生产这种蛋白放到膜上。结果确认：照光就开。<b>channelrhodopsin-1/2（通道视紫红质）</b>被发现（2002、2003 年发表）。</li>
+      <li>2005 年，Deisseroth 要来 chR2 的基因，放进培养皿里的<b>大鼠神经细胞</b>。蓝光一照，神经细胞立刻放电，而且信号能传给下一个神经细胞。</li>
+      <li>2007 年，他把光纤穿过小鼠颅骨的一个小孔，照进运动皮层：<b>光一开，胡须就动</b>。同年另一个实验里，用光照射一类控制清醒的神经细胞，睡着的鼠被"叫醒"了。</li>
+      <li>2012 年，他与利根川进（1987 年诺贝尔奖得主）一起激活小鼠的<b>记忆印迹</b>：让它在安全环境里表现出恐惧——这是人类第一次证明"哪些神经细胞是一段记忆的必需条件"。</li>
+    </ol>
+
+    <figure>
+      <svg viewBox="0 0 720 150" role="img" aria-label="示意图：光如何把一颗藻的感光蛋白变成神经细胞的光开关">
+        <desc>三段图形：绿藻用眼点追光；蓝光打开细胞膜上的通道蛋白，带电离子流入；神经细胞因此放电。</desc>
+        <!-- panel 1 -->
+        <rect x="8" y="10" width="216" height="130" rx="12" fill="#ffffff" stroke="#dde5ee"/>
+        <circle cx="92" cy="75" r="34" fill="#cfe7cf" stroke="#9dc79d"/>
+        <circle cx="110" cy="63" r="7" fill="#e08a2e"/>
+        <g stroke="#2456c8" stroke-width="3" stroke-linecap="round" class="pulse">
+          <path d="M30 52 h30"/><path d="M30 66 h30"/><path d="M30 80 h30"/>
+        </g>
+        <path d="M148 44 L192 75 L148 106" fill="none" stroke="#2456c8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+        <!-- panel 2 -->
+        <rect x="252" y="10" width="216" height="130" rx="12" fill="#ffffff" stroke="#dde5ee"/>
+        <path d="M268 88 h58" stroke="#9aa7b8" stroke-width="8" stroke-linecap="round"/>
+        <path d="M330 88 h62" stroke="#9aa7b8" stroke-width="8" stroke-linecap="round"/>
+        <rect x="322" y="64" width="14" height="48" rx="4" fill="#dfe6ef" stroke="#9aa7b8"/>
+        <circle cx="329" cy="52" r="5" fill="#2456c8"/>
+        <circle cx="329" cy="52" r="13" fill="#2456c8" opacity=".16" class="pulse"/>
+        <circle cx="330" cy="126" r="4.5" fill="#2456c8"/>
+        <circle cx="348" cy="130" r="4.5" fill="#2456c8"/>
+        <circle cx="366" cy="134" r="4.5" fill="#2456c8"/>
+        <!-- panel 3 -->
+        <rect x="496" y="10" width="216" height="130" rx="12" fill="#ffffff" stroke="#dde5ee"/>
+        <circle cx="548" cy="76" r="24" fill="#e8efff" stroke="#2456c8"/>
+        <path d="M572 76 h100" stroke="#2456c8" stroke-width="3" stroke-linecap="round"/>
+        <path d="M606 76 l-13 -11 M606 76 l-13 11" stroke="#2456c8" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M672 76 l-13 -11 M672 76 l-13 11" stroke="#2456c8" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </svg>
+      <ul class="figlegend">
+        <li><span class="mk">①</span>绿藻用「眼点」朝光游动</li>
+        <li><span class="mk">②</span>蓝光一照，通道打开，离子流入细胞</li>
+        <li><span class="mk">③</span>神经细胞因此放电，可被远程控制</li>
+      </ul>
+      <figcaption>示意图（本页自绘，非官方插图）：光遗传学的基本链条。真正做实验时，要先把 chR2 的基因送进某一类神经细胞，再用蓝光照射。</figcaption>
+    </figure>
+
+    <div class="cols" style="margin-top:26px">
+      <div>
+        <h3 class="sec">为什么重要</h3>
+        <div class="why">
+          <p>成年人的大脑约有 <b>900 亿个神经细胞</b>，每个又与其他细胞连出成千上万条通路。管完全不同功能的细胞常常混在一块儿。20 世纪的方法只能按"区域"干预，像一张模糊的草图：能看出哪片亮，说不清是哪根线在起作用。</p>
+          <p>光遗传学把分辨率提到了<b>单个细胞类型</b>。于是研究人员陆续点名：管疼痛的、管社交行为的、管口渴的、管进食的、管奖赏和注意的、管生物钟的回路；还发现同一件事的不同环节（比如小鼠把幼崽叼回窝、给幼崽理毛）由不同的回路分管。</p>
+          <p>它也已经走到临床门口：让视网膜色素变性致盲的人恢复部分视力（戴上会发光的特制眼镜，能辨认并抓住桌上的物体），以及让耳蜗植入体用光而不是电，更精确地刺激听神经。</p>
+          <p>Deisseroth 还做了一个反方向的发现：心率变化会影响情绪，让心脏更用力地跳，焦虑感会被放大。</p>
+        </div>
+      </div>
+      <div>
+        <h3 class="sec">三位得主</h3>
+        <div class="people">
+          <div class="person">
+            <div class="nm">Karl Deisseroth<span class="cn">卡尔·戴瑟罗斯</span></div>
+            <div class="aff">霍华德·休斯医学研究所 / 斯坦福大学（美国）</div>
+            <div class="bio">1971 年生 · 1998 年博士、2000 年医学博士（斯坦福）</div>
+          </div>
+          <div class="person">
+            <div class="nm">Peter Hegemann<span class="cn">彼得·黑格曼</span></div>
+            <div class="aff">柏林洪堡大学（德国）<br><span style="font-size:12.5px;color:var(--ink-3)">获奖发现完成于马克斯·普朗克生物化学研究所</span></div>
+            <div class="bio">1954 年生 · 1984 年博士</div>
+          </div>
+          <div class="person">
+            <div class="nm">Georg Nagel<span class="cn">格奥尔格·纳格尔</span></div>
+            <div class="aff">维尔茨堡大学（德国）<br><span style="font-size:12.5px;color:var(--ink-3)">获奖发现完成于马克斯·普朗克生物物理研究所</span></div>
+            <div class="bio">1953 年生 · 1988 年博士</div>
+          </div>
+        </div>
+        <h3 class="sec">关键数字</h3>
+        <div class="facts">
+          <div class="fact"><div class="n">0.5 ms</div><div class="l">藻类感光到出电信号</div></div>
+          <div class="fact"><div class="n">10 ms</div><div class="l">人眼同类过程至少要这么久</div></div>
+          <div class="fact"><div class="n">900 亿</div><div class="l">成年人脑内神经细胞数量</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="srcs">
+      <div class="k">官方来源</div>
+      <div>· <a href="https://www.nobelprize.org/prizes/medicine/2026/summary/">获奖公告页</a> ｜ <a href="https://www.nobelprize.org/prizes/medicine/2026/press-release/">新闻稿</a> ｜ <a href="https://www.nobelprize.org/prizes/medicine/2026/popular-information/">面向公众的科普说明（本卡片主要依据）</a></div>
+      <div>· 官方引文原句：<i>“for their discoveries concerning light-gated ion channels and optogenetics”</i></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══════════ 物理学 ══════════ -->
+<article class="prize phy">
+  <div class="prize-top">
+    <span class="badge">物理学 · 已揭晓</span>
+    <h2>用南极一立方公里的冰，接住宇宙深处的信使</h2>
+    <div class="date">2026 年 10 月 6 日 · 瑞典皇家科学院</div>
+    <blockquote class="quote">
+      <div class="en">"for decisive contributions to the IceCube Neutrino Observatory and the discovery of high-energy neutrinos of astrophysical origin"</div>
+      <div class="zh">表彰他对 IceCube 中微子天文台的决定性贡献，以及天体来源高能中微子的发现。</div>
+      <div class="src">诺贝尔奖官方授奖引文（英文原句）</div>
+    </blockquote>
+  </div>
+  <div class="prize-body">
+
+    <h3 class="sec">一句话</h3>
+    <p class="prose">他提出用南极冰盖做一台"望远镜"。冰够厚够纯，中微子撞上冰里的原子核时会闪出一点蓝光——用 5160 个光传感器盯住这些闪光，就能回溯它在宇宙中的来处。</p>
+
+    <h3 class="sec">因果链：为什么非得是冰，又非得是南极</h3>
+    <ol class="chain">
+      <li>宇宙里有"天然加速器"，能把质子加速到地球上任何加速器都达不到的能量。可是<b>质子带电，一路被磁场弯折</b>，到了地球已经指不回老家。</li>
+      <li>物理规律给出一个线索：把质子加速到极高能量的过程，<b>同时也会产生高能中微子</b>。中微子不带电，穿过磁场不拐弯、穿过物质几乎不损耗——它能笔直地指回源头。</li>
+      <li>中微子极难被发现：每秒有 <b>650 亿个</b>太阳中微子穿过你的一片指甲盖，你毫无感觉。要靠它，得有一个巨大的"靶子"。</li>
+      <li>当中微子偶尔撞上原子核，会生成带电粒子，沿途发出<b>蓝光</b>。水透明、能看得见这种光，但要看得多，就需要极大的体积。</li>
+      <li>Halzen 换了个思路：用自然界现成的<b>冰</b>。他与同行在 1988 年的会议上首次提出在南极冰下建中微子天文台。</li>
+      <li>南极有别人比不了的条件：那里已有科考站和运输保障；冰下恒暗、没有生物干扰、放射性极低、地质稳定没有地震。代价是<b>一年中大部分时间进不去</b>，所有施工只能挤在南极夏季（11 月到次年 2 月）。</li>
+      <li>施工办法是从冰川学家那里学来的：用热水"淋浴头"融出千米深的孔，再把挂着光传感器的缆绳放下去。Halzen 形容那些传感器是"倒过来的灯泡"——吸收光，转成电信号。</li>
+      <li>头几轮结果令人失望：上层冰里全是气泡，光被散射成一团。后来发现 <b>1400 米以下</b>的冰异常纯净，闪光能走 300 米才被吸收，比任何人预期的都远。</li>
+      <li>第一代装置 AMANDA 建到 2000 年 1 月，够用但不够大。于是上 IceCube：<b>一立方公里的冰、86 根缆、5160 个传感器</b>，2011 年完工。</li>
+      <li>难点在噪声：每天有一亿多个大气粒子穿透到传感器深度；大气中微子每天也有几百个从北半球穿过整个地球进来。只能靠<b>统计特征</b>把天体来的挑出来。</li>
+      <li>2013 年公布首批证据，再过两年数据积累够了，才敢确定：<b>这些中微子确实来自地球之外</b>。</li>
+      <li>2026 年的今天，候选源清单上最显眼的是活动星系 <b>NGC 1068（M77）</b>方向上的 79 个事件；研究人员也看到了来自<b>我们银河系内部</b>的高能中微子。下一步 IceCube-Gen2 是八立方公里的冰。</li>
+    </ol>
+
+    <figure>
+      <svg viewBox="0 0 720 240" role="img" aria-label="示意图：南极冰下的中微子望远镜如何工作">
+        <desc>冰面之下挂着多根缆绳，每根缆上串着光传感器。一个来自宇宙深处的中微子撞上冰中的原子核，发出蓝光闪光，被传感器记录下来。</desc>
+        <rect x="8" y="10" width="704" height="220" rx="12" fill="#ffffff" stroke="#dde5ee"/>
+        <rect x="8" y="10" width="704" height="46" rx="12" fill="#eef4f8" stroke="#dde5ee"/>
+        <rect x="8" y="40" width="704" height="16" rx="0" fill="#eef4f8"/>
+        <g stroke="#b9c6d4" stroke-width="2">
+          <line x1="120" y1="56" x2="120" y2="214"/>
+          <line x1="240" y1="56" x2="240" y2="214"/>
+          <line x1="360" y1="56" x2="360" y2="214"/>
+          <line x1="480" y1="56" x2="480" y2="214"/>
+          <line x1="600" y1="56" x2="600" y2="214"/>
+        </g>
+        <g fill="#7f95ab">
+          <circle cx="120" cy="80" r="4"/><circle cx="120" cy="118" r="4"/><circle cx="120" cy="156" r="4"/><circle cx="120" cy="194" r="4"/>
+          <circle cx="240" cy="80" r="4"/><circle cx="240" cy="118" r="4"/><circle cx="240" cy="156" r="4"/><circle cx="240" cy="194" r="4"/>
+          <circle cx="360" cy="80" r="4"/><circle cx="360" cy="118" r="4"/><circle cx="360" cy="156" r="4"/><circle cx="360" cy="194" r="4"/>
+          <circle cx="480" cy="80" r="4"/><circle cx="480" cy="118" r="4"/><circle cx="480" cy="156" r="4"/><circle cx="480" cy="194" r="4"/>
+          <circle cx="600" cy="80" r="4"/><circle cx="600" cy="118" r="4"/><circle cx="600" cy="156" r="4"/><circle cx="600" cy="194" r="4"/>
+        </g>
+        <line x1="686" y1="70" x2="392" y2="168" stroke="#0b7f8c" stroke-width="2.5" stroke-dasharray="7 6"/>
+        <circle cx="386" cy="170" r="18" fill="#0b7f8c" opacity=".16" class="pulse"/>
+        <circle cx="386" cy="170" r="7" fill="#0b7f8c"/>
+        <circle cx="686" cy="70" r="5" fill="#0b7f8c"/>
+      </svg>
+      <ul class="figlegend two">
+        <li><span class="mk sq" style="background:#eef4f8;color:#46536a">1</span>冰面之上是南极科考站（图中浅色条带）</li>
+        <li><span class="mk sq" style="background:#eef1f6;color:#78859b">2</span>缆绳伸到冰下 1450–2450 米</li>
+        <li><span class="mk" style="background:#eef1f6;color:#78859b">3</span>每根缆上串着光传感器，共 5160 个、分挂 86 根缆</li>
+        <li><span class="mk" style="background:#e2f4f6;color:#0b7f8c">4</span>中微子撞上冰里的原子核，闪出蓝光（虚线为来路）</li>
+      </ul>
+      <figcaption>示意图（本页自绘，非官方插图）：IceCube 的工作方式。闪光的方向和亮度，被用来反推中微子在宇宙中的来处。</figcaption>
+    </figure>
+
+    <div class="cols" style="margin-top:26px">
+      <div>
+        <h3 class="sec">为什么重要</h3>
+        <div class="why">
+          <p>它开了一门新的天文学：<b>用中微子看宇宙</b>。光和射电会被尘埃挡住、被空间里的物质削弱，质子会拐弯，只有中微子能穿过一切、不改方向也不丢能量地把信息带出来。有些知识，除了它没有第二种办法拿到。</p>
+          <p>这条路上前人已经拿过两次诺贝尔奖：2002 年（戴维斯、小柴昌俊，证明中微子可以用来研究天体）和 2015 年（梶田隆章、麦克唐纳，发现中微子会"变身"）。IceCube 把这件事推到了新尺度。</p>
+          <p>工程上也有副产品：为了造这台望远镜，人类才把南极冰不同深度的性质摸清楚。而且这台机器的价值不只在天上——它证明了一个"看起来太疯狂"的想法，可以在三十多年里被一步步建成实物。</p>
+        </div>
+      </div>
+      <div>
+        <h3 class="sec">得主</h3>
+        <div class="people">
+          <div class="person">
+            <div class="nm">Francis Halzen<span class="cn">弗朗西斯·哈尔岑</span></div>
+            <div class="aff">威斯康星大学麦迪逊分校（美国）</div>
+            <div class="bio">1944 年生于比利时蒂嫩 · 1969 年博士（比利时鲁汶大学）</div>
+          </div>
+        </div>
+        <h3 class="sec">关键数字</h3>
+        <div class="facts">
+          <div class="fact"><div class="n">650 亿</div><div class="l">每秒穿过一片指甲盖的太阳中微子</div></div>
+          <div class="fact"><div class="n">5160</div><div class="l">冰下光传感器数量（86 根缆）</div></div>
+          <div class="fact"><div class="n">1 km³</div><div class="l">IceCube 使用的冰体积</div></div>
+          <div class="fact"><div class="n">8 km³</div><div class="l">下一代 IceCube-Gen2 的规模</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="srcs">
+      <div class="k">官方来源</div>
+      <div>· <a href="https://www.nobelprize.org/prizes/physics/2026/summary/">获奖公告页</a> ｜ <a href="https://www.nobelprize.org/prizes/physics/2026/press-release/">新闻稿</a> ｜ <a href="https://www.nobelprize.org/prizes/physics/2026/popular-information/">面向公众的科普说明（本卡片主要依据）</a></div>
+      <div>· 官方引文原句：<i>“for decisive contributions to the IceCube Neutrino Observatory and the discovery of high-energy neutrinos of astrophysical origin”</i></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══════════ 待揭晓 ══════════ -->
+<section aria-label="尚未揭晓的奖项">
+  <h3 class="sec" style="border-bottom:none; padding-bottom:0; margin:36px 0 14px">尚未揭晓 · 4 项</h3>
+  <div class="wait-grid">
+    <article class="prize wait">
+      <div class="prize-top">
+        <span class="badge">化学 · 今日</span>
+        <h2>化学</h2>
+        <div class="date">10 月 7 日 · 瑞典皇家科学院</div>
+      </div>
+      <div class="prize-body">
+        <p class="wait-note">诺贝尔奖一贯的做法是：公布的那一刻才同时发布得主与授奖引文，之前不透露任何信息。</p>
+        <span class="stamp">待官方公布</span>
+      </div>
+    </article>
+    <article class="prize wait">
+      <div class="prize-top">
+        <span class="badge">文学 · 待揭晓</span>
+        <h2>文学</h2>
+        <div class="date">10 月 8 日 · 瑞典学院</div>
+      </div>
+      <div class="prize-body">
+        <p class="wait-note">文学奖的候选人名单有 50 年保密期，公布前外界的所有"名单"都不是官方信息。</p>
+        <span class="stamp">待官方公布</span>
+      </div>
+    </article>
+    <article class="prize wait">
+      <div class="prize-top">
+        <span class="badge">和平 · 待揭晓</span>
+        <h2>和平</h2>
+        <div class="date">10 月 9 日 · 挪威诺贝尔委员会（奥斯陆）</div>
+      </div>
+      <div class="prize-body">
+        <p class="wait-note">唯一在奥斯陆颁发的奖，由挪威诺贝尔委员会决定。</p>
+        <span class="stamp">待官方公布</span>
+      </div>
+    </article>
+    <article class="prize wait">
+      <div class="prize-top">
+        <span class="badge">经济学 · 待揭晓</span>
+        <h2>经济学</h2>
+        <div class="date">10 月 12 日 · 瑞典皇家科学院</div>
+      </div>
+      <div class="prize-body">
+        <p class="wait-note">正式名称是"瑞典中央银行纪念阿尔弗雷德·诺贝尔经济学奖"，1969 年才设立，比其他五项晚。</p>
+        <span class="stamp">待官方公布</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <p><b style="color:var(--ink-2)">本页的取材纪律</b></p>
+  <p>· 已揭晓的奖项：全部事实取自诺贝尔奖官方公告页、官方新闻稿与官方"面向公众的科普说明"，不做二次演绎。授奖引文保留英文原句，中文为转述。</p>
+  <p>· 未揭晓的奖项：只写日期与颁奖机构，不填内容。</p>
+  <p>· 揭晓日期取自官方数据接口 <span style="font-variant-numeric:tabular-nums">api.nobelprize.org/2.1/nobelPrizes?nobelPrizeYear=2026</span> 的 <span style="font-variant-numeric:tabular-nums">dateAwarded</span> 字段，逐条核对。</p>
+  <p>· 示意图为本页自绘（SVG），仅示意原理，不是官方插图。</p>
+  <p style="margin-top:14px">数据与引文版权归 © The Nobel Foundation / Nobel Prize Outreach 及各颁奖机构所有，本页为非商业用途的中文科普转述。</p>
+  <a class="totop" href="#top">回到顶部 ↑</a>
+</footer>
+
+</div>
+<a id="top"></a>
+</body>
+</html>
