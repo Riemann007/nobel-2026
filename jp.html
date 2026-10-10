@@ -530,8 +530,28 @@
   .jp-legend{display:flex; flex-wrap:wrap; gap:14px 22px; margin:6px 0 0; padding:0 4px 10px}
   .jp-legend span{font-size:12.8px; color:var(--ink-2); display:inline-flex; align-items:center; gap:7px}
   .jp-legend i{width:10px; height:10px; border-radius:50%; display:inline-block}
-  .jp-people{display:grid; grid-template-columns:repeat(auto-fit,minmax(268px,1fr)); gap:12px; margin-top:6px}
-  .jp-card{border:1px solid var(--line); border-radius:var(--radius); background:var(--paper-3); padding:14px 15px}
+  .jp-people{display:grid; grid-template-columns:repeat(auto-fit,minmax(430px,1fr)); gap:12px; margin-top:6px}
+  .jp-card{border:1px solid var(--line); border-radius:var(--radius); background:var(--paper-3); padding:14px 15px;
+    display:grid; grid-template-columns:132px 1fr; gap:14px; align-items:start}
+  .jp-ph{margin:0}
+  .jp-ph img{width:132px; height:198px; display:block; border:1px solid var(--line);
+    border-radius:3px; background:var(--paper-2); object-fit:contain}
+  .jp-ph figcaption{font-family:var(--font-mono); font-size:9.6px; line-height:1.45; color:var(--ink-3);
+    margin-top:6px; max-width:132px}
+  .jp-card .jp-ach{margin:9px 0 0; font-size:13.6px; line-height:1.78; color:var(--ink)}
+  .jp-card .jp-lbl{display:block; font-family:var(--font-mono); font-size:10.4px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--gold-deep); margin-bottom:3px}
+  .jp-card .jp-en{margin:10px 0 0; border-top:1px solid var(--line-2); padding-top:8px}
+  .jp-card .jp-en summary{font-size:12.4px; color:var(--ink-2); cursor:pointer}
+  .jp-card .jp-en summary .en{font-family:var(--font-serif); color:var(--ink-3); margin-left:6px}
+  .jp-card .jp-en p{margin:8px 0 0; font-size:12.6px; line-height:1.72; color:var(--ink-2)}
+  .jp-card .jp-srcline{font-size:11.6px; color:var(--ink-3)}
+  @media (max-width:520px){
+    .jp-people{grid-template-columns:1fr}
+    .jp-card{grid-template-columns:104px 1fr; gap:11px}
+    .jp-ph img{width:104px; height:156px}
+    .jp-ph figcaption{max-width:104px; font-size:9px}
+  }
   .jp-card .jp-y{display:flex; align-items:baseline; justify-content:space-between; font-family:var(--font-mono);
     font-size:12.5px; color:var(--ink-3); letter-spacing:.04em}
   .jp-card .jp-y b{font-size:14.5px; color:var(--ink)}
@@ -605,7 +625,7 @@
   </header>
 
   <section id="facts" style="margin:26px 0 34px">
-    <div class="facts"><div class="fact"><div class="n">27</div><div class="l">出生于日本的科学奖得主<span class="en">born in Japan</span></div></div><div class="fact"><div class="n">5 : 22</div><div class="l">1949–1999 : 2000–2026<span class="en">before and after 2000</span></div></div><div class="fact"><div class="n">7</div><div class="l">获奖时挂名美国机构<span class="en">affiliated in the USA at award</span></div></div><div class="fact"><div class="n">20</div><div class="l">获奖时机构在日本<span class="en">affiliated in Japan</span></div></div></div>
+    <div class="facts"><div class="fact"><div class="n">27</div><div class="l">出生于日本的科学奖得主<span class="en">born in Japan</span></div></div><div class="fact"><div class="n">5 : 22</div><div class="l">1949–1999 : 2000–2026<span class="en">before and after 2000</span></div></div><div class="fact"><div class="n">7</div><div class="l">获奖时挂名美国机构<span class="en">affiliated in the USA at award</span></div></div><div class="fact"><div class="n">20</div><div class="l">获奖时机构在日本<span class="en">affiliated in Japan</span></div></div><div class="fact"><div class="n">27</div><div class="l">张官方肖像（逐张署名）<span class="en">official portraits, each credited</span></div></div></div>
   </section>
 
   <section id="scope">
@@ -787,221 +807,489 @@
 
   <section id="cards" style="margin-top:38px">
     <h2 class="sec-label"><span class="lab">The 27</span><span class="zh">27 位得主 · 逐人卡片（按年份）</span></h2>
-    <p class="lead">每张卡上的机构与份额都是官方字段原文；英文那行是官方获奖理由（<span class="en">motivation</span>），一字未改，也没有翻译成中文替代它。</p>
+    <p class="lead">每张卡的官方部分有三层：<b>肖像</b>（取自 nobelprize.org 官方得主页原图，署名行逐年保留，仅等比缩放、不裁切）＋ <b>官方获奖理由</b>（英文原文，一字未改）＋ <b>官方原文</b>（facts 页 <span class="en">Work</span> 段逐字保留，点开可核对）。中文那一段是<b>官方 Work 段的中文转述</b>，里面出现的年份与数字都能在官方原文里找到。</p>
     <div class="jp-people">
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/yukawa.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="汤川秀树官方肖像（Hideki Yukawa，nobelprize.org）">
+        <figcaption>Photo from the Nobel Foundation archive.</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>1949</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">汤川秀树<span class="en">Hideki Yukawa</span></h3>
         <p class="jp-aff">哥伦比亚大学<span class="jp-affen">Columbia University</span><span class="jp-place">获奖时 · New York, NY，USA · 份额 1</span></p>
-        <p class="jp-mot"><span class="en">for his prediction of the existence of mesons on the basis of theoretical work on nuclear forces</span></p>
+        <p class="jp-ach">原子核由质子与中子组成，靠一种强作用力束缚在一起。汤川秀树假定这种力由粒子传递，并指出作用力的作用范围与传递粒子的质量相关。1934 年他预言这种粒子的质量约为电子的 200 倍，称之为「介子」；此后实验证实了介子的存在。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for his prediction of the existence of mesons on the basis of theoretical work on nuclear forces</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Atomic nuclei consist of protons and neutrons held together by a strong force. Hideki Yukawa assumed that this force is borne by particles and that there is a relationship between the range of the force and the mass of the force-bearing particle. In 1934, Yukawa predicted that this particle should have a mass about 200 times that of an electron. He called this particle a “meson”. Mesons’ existence was verified in later experiments.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/1949/yukawa/facts/" rel="noopener">nobelprize.org · Hideki Yukawa facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/1949/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1907-01-23</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/tomonaga.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="朝永振一郎官方肖像（Sin-Itiro Tomonaga，nobelprize.org）">
+        <figcaption>Photo from the Nobel Foundation archive.</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>1965</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">朝永振一郎<span class="en">Sin-Itiro Tomonaga</span></h3>
         <p class="jp-aff">东京教育大学<span class="jp-affen">Tokyo University of Education</span><span class="jp-place">获奖时 · Tokyo，日本 · 份额 1/3</span></p>
-        <p class="jp-mot"><span class="en">for their fundamental work in quantum electrodynamics, with deep-ploughing consequences for the physics of elementary particles</span></p>
+        <p class="jp-ach">相对论与量子力学建立之后，人们为带电粒子与电磁场的相互作用写下了最初的相对论性理论。1947 年观测到的兰姆位移——氢原子中本被认为单一的能级其实是两个相近的能级——迫使这一理论重写。朝永振一郎 1948 年用「重整化」解决了这个问题，由此促成了新的量子电动力学。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for their fundamental work in quantum electrodynamics, with deep-ploughing consequences for the physics of elementary particles</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Following the establishment of the theory of relativity and quantum mechanics, an initial relativistic theory was formulated for the interaction between charged particles and electromagnetic fields. The theory had to be reformulated, however, partly due to the observation of the Lamb shift in 1947, in which the supposed single energy level within a hydrogen atom was instead proven to be two similar levels. Sin-Itiro Tomonga solved this problem in 1948 through a “renormalization” and thereby contributed to a new quantum electrodynamics.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/1965/tomonaga/facts/" rel="noopener">nobelprize.org · Sin-Itiro Tomonaga facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/1965/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1906-03-31</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/esaki.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="江崎玲於奈官方肖像（Leo Esaki，nobelprize.org）">
+        <figcaption>Photo from the Nobel Foundation archive.</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>1973</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">江崎玲於奈<span class="en">Leo Esaki</span></h3>
         <p class="jp-aff">IBM 沃森研究中心<span class="jp-affen">IBM Thomas J. Watson Research Center</span><span class="jp-place">获奖时 · Yorktown Heights, NY，USA · 份额 1/4</span></p>
-        <p class="jp-mot"><span class="en">for their experimental discoveries regarding tunneling phenomena in semiconductors and superconductors, respectively</span></p>
+        <p class="jp-ach">在量子物理里，物质同时以波和粒子两种面貌出现，隧穿现象即由此而来：粒子可以穿过经典物理认为它挤不过去的势垒。1958 年，江崎玲於奈用一个看上去很简单的实验，在半导体材料中展示了一种此前未知的隧穿。这一发现被用在被称为「隧道二极管」的半导体器件上，也推动了半导体的后续研究。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for their experimental discoveries regarding tunneling phenomena in semiconductors and superconductors, respectively</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">In quantum physics matter is described as both waves and particles. One result of this is the tunneling phenomenon, which means that particles can pass through barriers that they should not be able to squeeze through according to classic physics. Through a seemingly simple experiment in 1958, Leo Esaki demonstrated a previously unknown type of tunneling in semiconductor material, material that is a cross between electrical conductors and insulators. The discovery is utilized in semiconductors known as tunnel diodes. It also led to further research on semiconductors.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/1973/esaki/facts/" rel="noopener">nobelprize.org · Leo Esaki facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/1973/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1925-03-12</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/fukui.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="福井谦一官方肖像（Kenichi Fukui，nobelprize.org）">
+        <figcaption>Photo from the Nobel Foundation archive.</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>1981</b><span class="jp-cat" style="color:var(--gold-deep)">化学</span></div>
         <h3 class="jp-nm">福井谦一<span class="en">Kenichi Fukui</span></h3>
         <p class="jp-aff">京都大学<span class="jp-affen">Kyoto University</span><span class="jp-place">获奖时 · Kyoto，日本 · 份额 1/2</span></p>
-        <p class="jp-mot"><span class="en">for their theories, developed independently, concerning the course of chemical reactions</span></p>
+        <p class="jp-ach">化学反应中，分子相遇生成新的化合物，围绕原子核运动的电子在其中起关键作用。1952 年福井谦一提出理论，指出与原子结合最松弛的那些电子，其轨道性质对理解化学反应至关重要。在后来的发展中，福井与罗尔德·霍夫曼各自独立地证明：电子轨道的对称性如何决定化学反应的走向。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for their theories, developed independently, concerning the course of chemical reactions</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">In chemical reactions, molecules composed of atoms meet and form new compounds. Electrons orbiting around the atoms’ nuclei play an important role here. In 1952, Kenichi Fukui developed a theory that showed that the properties of the orbits of electrons that are most weakly bonded to the atom are critically important in understanding chemical reactions. In later, more developed theories, Fukui and Roald Hoffmann proved independently of one another how the symmetrical properties of electron orbitals explain the course of chemical reactions.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/chemistry/1981/fukui/facts/" rel="noopener">nobelprize.org · Kenichi Fukui facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/chemistry/1981/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1918-10-04</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/tonegawa.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="利根川进官方肖像（Susumu Tonegawa，nobelprize.org）">
+        <figcaption>Photo from the Nobel Foundation archive.</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>1987</b><span class="jp-cat" style="color:var(--blue)">生理学或医学</span></div>
         <h3 class="jp-nm">利根川进<span class="en">Susumu Tonegawa</span></h3>
         <p class="jp-aff">麻省理工学院<span class="jp-affen">Massachusetts Institute of Technology (MIT)</span><span class="jp-place">获奖时 · Cambridge, MA，USA · 份额 1</span></p>
-        <p class="jp-mot"><span class="en">for his discovery of the genetic principle for generation of antibody diversity</span></p>
+        <p class="jp-ach">免疫系统中包含能中和异物与微生物的抗体。抗体由一类白细胞——B 淋巴细胞——产生；抗体是蛋白质，其产生由基因控制。人体内的抗体有上亿种，远超人类基因的总数。1976 年利根川进证明这何以可能：细胞在发育为产生抗体的 B 淋巴细胞的过程中，基因发生了重排。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for his discovery of the genetic principle for generation of antibody diversity</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">The immune system includes antibodies that neutralize substances foreign to the body and microorganisms. Antibodies are formed in a type of white blood cell, B lymphocytes. Antibodies are proteins, and their production is governed by genes. There are hundreds of millions of different antibodies, which vastly outnumber the combined total of human genes. In 1976 Susumu Tonegawa showed how this is possible through the redistribution of genes in a cell during its development into an antibody-producing B lymphocyte.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/medicine/1987/tonegawa/facts/" rel="noopener">nobelprize.org · Susumu Tonegawa facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/medicine/1987/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1939-09-05</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/shirakawa.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="白川英树官方肖像（Hideki Shirakawa，nobelprize.org）">
+        <figcaption>Photo from the Nobel Foundation archive.</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2000</b><span class="jp-cat" style="color:var(--gold-deep)">化学</span></div>
         <h3 class="jp-nm">白川英树<span class="en">Hideki Shirakawa</span></h3>
         <p class="jp-aff">筑波大学<span class="jp-affen">University of Tsukuba</span><span class="jp-place">获奖时 · Tsukuba，日本 · 份额 1/3</span></p>
-        <p class="jp-mot"><span class="en">for the discovery and development of conductive polymers</span></p>
+        <p class="jp-ach">塑料由聚合物构成——由小分子连成长链的巨大分子；塑料通常不导电。1970 年代末，白川英树与艾伦·黑格、艾伦·麦克迪尔米德证明可以造出导电的聚合物：碳原子链上需要有单双键交替，并对聚合物进行掺杂（掺入合适的原子），从而使自由电子或空穴出现。导电聚合物可用于电子器件等用途。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the discovery and development of conductive polymers</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Plastic material is composed of polymers—very large molecules that take the form of long chains of smaller molecules. Plastic usually does not conduct electricity, but at the end of the 1970s Hideki Shirakawa, Alan Heeger and Alan MacDiarmid demonstrated that it is possible to produce conductive polymers. This requires alternating single and double bonds between carbon atoms in the chain and doping the polymers through the addition of suitable atoms so that free electrons or holes appear after the electrons. Conductive polymers can be used in electronics and other applications.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/chemistry/2000/shirakawa/facts/" rel="noopener">nobelprize.org · Hideki Shirakawa facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/chemistry/2000/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1936-08-20</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/noyori.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="野依良治官方肖像（Ryoji Noyori，nobelprize.org）">
+        <figcaption>Photo: Pressens Bild. Nobel Foundation archive.</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2001</b><span class="jp-cat" style="color:var(--gold-deep)">化学</span></div>
         <h3 class="jp-nm">野依良治<span class="en">Ryoji Noyori</span></h3>
         <p class="jp-aff">名古屋大学<span class="jp-affen">Nagoya University</span><span class="jp-place">获奖时 · Nagoya，日本 · 份额 1/4</span></p>
-        <p class="jp-mot"><span class="en">for their work on chirally catalysed hydrogenation reactions</span></p>
+        <p class="jp-ach">许多分子以两种互为镜像的形式存在，二者的化学与生物效应并不相同。借助特殊的催化剂——参与反应而不被反应消耗的物质——可以让反应只生成其中一种镜像形式。1968 年野依良治开发出在加氢反应中使用这类催化剂的方法，加氢即把氢气加到化合物上。这一方法使多种药物的生产成为可能。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for their work on chirally catalysed hydrogenation reactions</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Many molecules appear in two different reversed forms that have different chemical and biological effects. Through special catalysts—substances that facilitate chemical reactions without being consumed in them—it is possible to bring about a process in which only one of the reversed forms is produced. In 1968 Ryoji Noyori developed methods for using catalysts with these properties during hydrogenation—reactions in which hydrogen gas is added to a chemical compound. Among other things, this has enabled production of various types of medication.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/chemistry/2001/noyori/facts/" rel="noopener">nobelprize.org · Ryoji Noyori facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/chemistry/2001/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1938-09-03</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/tanaka.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="田中耕一官方肖像（Koichi Tanaka，nobelprize.org）">
+        <figcaption>Photo from the Nobel Foundation archive.</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2002</b><span class="jp-cat" style="color:var(--gold-deep)">化学</span></div>
         <h3 class="jp-nm">田中耕一<span class="en">Koichi Tanaka</span></h3>
         <p class="jp-aff">岛津制作所<span class="jp-affen">Shimadzu Corp.</span><span class="jp-place">获奖时 · Kyoto，日本 · 份额 1/4</span></p>
-        <p class="jp-mot"><span class="en">for their development of soft desorption ionisation methods for mass spectrometric analyses of biological macromolecules</span></p>
+        <p class="jp-ach">带电的分子（离子）在电场中加速时，速度取决于离子的电荷与质量；测量离子飞过某段距离所需的时间，就能确定样品中不同分子的构成。但在此之前，这一方法无法用于蛋白质这样的大分子——除非能先把大离子制成气态。1987 年田中耕一证明，激光脉冲可以把蛋白质分子打散，从而产生气态的离子。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for their development of soft desorption ionisation methods for mass spectrometric analyses of biological macromolecules</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">When electrically charged molecules—ions—are accelerated by an electrical field, their speed depends on the ion’s charge and weight. By measuring the time it takes for the ions to pass a certain distance, the incidence of different molecules in a test can be determined. It was impossible, however, to use this technique on large molecules, such as proteins, before large ions could be produced in gaseous form. In 1987 Koichiro Tanaka showed that laser pulses could blast apart protein molecules so that ions in gaseous form are produced.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/chemistry/2002/tanaka/facts/" rel="noopener">nobelprize.org · Koichi Tanaka facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/chemistry/2002/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1959-08-03</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/koshiba.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="小柴昌俊官方肖像（Masatoshi Koshiba，nobelprize.org）">
+        <figcaption>Photo from the Nobel Foundation archive.</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2002</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">小柴昌俊<span class="en">Masatoshi Koshiba</span></h3>
         <p class="jp-aff">东京大学<span class="jp-affen">University of Tokyo</span><span class="jp-place">获奖时 · Tokyo，日本 · 份额 1/4</span></p>
-        <p class="jp-mot"><span class="en">for pioneering contributions to astrophysics, in particular for the detection of cosmic neutrinos</span></p>
+        <p class="jp-ach">某些核反应——包括氢原子结合成氦的反应——会产生难以捕捉的中微子。雷蒙德·戴维斯证实了宇宙辐射中存在中微子，从而表明太阳的能量来自这类核反应。1980 年起，小柴昌俊在矿山中一个巨大的水槽内进行测量，提供了进一步的证明：在极少数情况下，中微子会与水中原子核发生反应，产生一个电子，由此形成可被探测的闪光。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for pioneering contributions to astrophysics, in particular for the detection of cosmic neutrinos</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Certain nuclear reactions, including those where hydrogen atoms combine with helium, form elusive particles called neutrinos. By proving the existence of neutrinos in cosmic radiation, Raymond Davis showed that the sun&#x27;s energy originates from such nuclear reactions. From 1980, Masatoshi Koshiba provided further proof of this through measurements taken inside an enormous water tank within a mine. In rare cases, neutrinos react with atomic nuclei in water, creating an electron and thus a flash of light that can be detected.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/2002/koshiba/facts/" rel="noopener">nobelprize.org · Masatoshi Koshiba facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/2002/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1926-09-19</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/shimomura.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="下村脩官方肖像（Osamu Shimomura，nobelprize.org）">
+        <figcaption>© The Nobel Foundation. Photo: U. Montan</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2008</b><span class="jp-cat" style="color:var(--gold-deep)">化学</span></div>
         <h3 class="jp-nm">下村脩<span class="en">Osamu Shimomura</span></h3>
         <p class="jp-aff">海洋生物学实验室<span class="jp-affen">Marine Biological Laboratory (MBL)</span><span class="jp-place">获奖时 · Woods Hole, MA，USA · 份额 1/3</span></p>
-        <p class="jp-mot"><span class="en">for the discovery and development of the green fluorescent protein, GFP</span></p>
+        <p class="jp-ach">有些生物会制造绿色荧光蛋白（GFP），发出微光。GFP 的生成由一个基因调控，而这个基因可以被植入其他生物的基因组。由于借助基因工程可以把 GFP 与其他蛋白质连接，它成为研究细胞内生物学过程的重要工具。走出第一步的是下村脩：他在 1960 年代从水母 Aequorea victoria 中分离出 GFP，并发现这种蛋白在紫外光照射下会发绿光。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the discovery and development of the green fluorescent protein, GFP</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Some organisms produce what has been named Green Fluorescent Protein (GFP), which emits a shimmering light. The formation of GFP is regulated by a gene that can be incorporated into the genomes of other organisms. Because GFP can be linked to other proteins thanks to genetic engineering, it has become an important tool for studying biological processes in cells. The first steps in achieving this were taken by Osamu Shimamura, who isolated GFP from the jellyfish Aequorea victoria in the 1960s and found that the protein glowed green when illuminated with ultraviolet light.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/chemistry/2008/shimomura/facts/" rel="noopener">nobelprize.org · Osamu Shimomura facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/chemistry/2008/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1928-08-27</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/kobayashi.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="小林诚官方肖像（Makoto Kobayashi，nobelprize.org）">
+        <figcaption>© The Nobel Foundation Photo: U. Montan</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2008</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">小林诚<span class="en">Makoto Kobayashi</span></h3>
         <p class="jp-aff">高能加速器研究机构<span class="jp-affen">High Energy Accelerator Research Organization (KEK)</span><span class="jp-place">获奖时 · Tsukuba，日本 · 份额 1/4</span></p>
-        <p class="jp-mot"><span class="en">for the discovery of the origin of the broken symmetry which predicts the existence of at least three families of quarks in nature</span></p>
+        <p class="jp-ach">物理学家长期假定自然界以对称性为特征：在一个左右互换、物质换为反物质的镜像世界里，自然定律依然成立。在发现某些粒子（K 介子）的衰变并不对称之后，1972 年京都大学的两位年轻研究者小林诚与益川敏英用一个 3×3 矩阵给出了基于数学的解释。这个解释意味着构成物质的夸克至少有三代（家族）；他们还指出可以在比 K 介子重十倍的 B 介子上研究这种对称性破坏——2001 年两项独立实验证实了这一预言。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the discovery of the origin of the broken symmetry which predicts the existence of at least three families of quarks in nature</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Physicists long assumed that nature is characterized by symmetry. In a kind of mirrored world where right and left changed places and matter was exchanged for antimatter, natural laws would stand. After it was discovered that the decay of certain particles (kaons) was asymmetrical, a mathematics-based explanation for this was presented by Makoto Kobayashi and Toshihide Maskawa in 1972. The explanation meant that there must be at least three families of quarks that form matter. This theory was later verified.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/2008/kobayashi/facts/" rel="noopener">nobelprize.org · Makoto Kobayashi facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/2008/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1944-04-07</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/maskawa.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="益川敏英官方肖像（Toshihide Maskawa，nobelprize.org）">
+        <figcaption>© The Nobel Foundation Photo: U. Montan</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2008</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">益川敏英<span class="en">Toshihide Maskawa</span></h3>
         <p class="jp-aff">京都产业大学<span class="jp-affen">Kyoto Sangyo University</span><span class="jp-place">获奖时 · Kyoto，日本 · 份额 1/4</span></p>
-        <p class="jp-mot"><span class="en">for the discovery of the origin of the broken symmetry which predicts the existence of at least three families of quarks in nature</span></p>
+        <p class="jp-ach">物理学家长期假定自然界以对称性为特征：在一个左右互换、物质换为反物质的镜像世界里，自然定律依然成立。在发现某些粒子（K 介子）的衰变并不对称之后，1972 年京都大学的两位年轻研究者益川敏英与小林诚用一个 3×3 矩阵给出了基于数学的解释。这个解释意味着构成物质的夸克至少有三代（家族）；他们还指出可以在比 K 介子重十倍的 B 介子上研究这种对称性破坏——2001 年两项独立实验证实了这一预言。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the discovery of the origin of the broken symmetry which predicts the existence of at least three families of quarks in nature</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Physicists long assumed that nature is characterized by symmetry. In a kind of mirrored world where right and left changed places and matter was exchanged for antimatter, natural laws would stand. After it was discovered that the decay of certain particles (kaons) was asymmetrical, a mathematics-based explanation for this was presented by Toshihide Maskawa and Makoto Kobayashi in 1972. The explanation meant that there must be at least three families of quarks that form matter. This theory was later verified.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/2008/maskawa/facts/" rel="noopener">nobelprize.org · Toshihide Maskawa facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/2008/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1940-02-07</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/nambu.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="南部阳一郎官方肖像（Yoichiro Nambu，nobelprize.org）">
+        <figcaption>Photo: University of Chicago</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2008</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">南部阳一郎<span class="en">Yoichiro Nambu</span></h3>
         <p class="jp-aff">芝加哥大学费米研究所<span class="jp-affen">Enrico Fermi Institute, University of Chicago</span><span class="jp-place">获奖时 · Chicago, IL，USA · 份额 1/2</span></p>
-        <p class="jp-mot"><span class="en">for the discovery of the mechanism of spontaneous broken symmetry in subatomic physics</span></p>
+        <p class="jp-ach">长期以来物理学家假定自然由各种对称性刻画，并设想在一个左右反转、物质被反物质取代的「镜像世界」里，同样的物理定律依然适用。然而对称性已被证明会遭到破坏。1960 年，南部阳一郎第一个把「自发对称性破缺」引入基本粒子物理，为理解它提出了数学理论——他处理自发对称性破缺的方法如今渗透在所有关于标准模型的理论之中。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the discovery of the mechanism of spontaneous broken symmetry in subatomic physics</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">For a long time, physicists assumed that various symmetries characterized nature. In a kind of “mirror world” where right and left were reversed and matter was replaced by antimatter, the same physical laws would apply, they posited. However, symmetries had been proven to be violated at times. In 1960, Yoichiro Nambu formulated a mathematical theory for understanding spontaneous symmetry violations, providing a basis for better understanding elementary particles and their interactions.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/2008/nambu/facts/" rel="noopener">nobelprize.org · Yoichiro Nambu facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/2008/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1921-01-18</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/suzuki.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="铃木章官方肖像（Akira Suzuki，nobelprize.org）">
+        <figcaption>© The Nobel Foundation. Photo: U. Montan</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2010</b><span class="jp-cat" style="color:var(--gold-deep)">化学</span></div>
         <h3 class="jp-nm">铃木章<span class="en">Akira Suzuki</span></h3>
         <p class="jp-aff">北海道大学<span class="jp-affen">Hokkaido University</span><span class="jp-place">获奖时 · Sapporo，日本 · 份额 1/3</span></p>
-        <p class="jp-mot"><span class="en">for palladium-catalyzed cross couplings in organic synthesis</span></p>
+        <p class="jp-ach">自然界充满有机物——大量含碳的化合物。用化学方法把有机物结合起来或合成出来，在科学与工业上都很重要。1970 年代末，铃木章开始发展把碳原子相互连接、生成新化合物的反应：这些反应在碳原子之间形成交叉偶联，以金属钯作催化剂——钯促成反应，而不进入最终产物。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for palladium-catalyzed cross couplings in organic synthesis</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Nature is full of organic substances—a multitude of chemical compounds that contain the element carbon. Using chemical methods to combine or synthesize organic substances is important in both scientific and industrial contexts. At the end of the 1970s, Akira Suzuki began developing chemical reactions in which carbon atoms are bound together so that new compounds are created. The reactions create cross couplings between carbon atoms, with the metal palladium as a catalyst. Palladium facilitates the reaction without becoming incorporated in the final product.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/chemistry/2010/suzuki/facts/" rel="noopener">nobelprize.org · Akira Suzuki facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/chemistry/2010/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1930-09-12</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/yamanaka.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="山中伸弥官方肖像（Shinya Yamanaka，nobelprize.org）">
+        <figcaption>© The Nobel Foundation. Photo: U. Montan</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2012</b><span class="jp-cat" style="color:var(--blue)">生理学或医学</span></div>
         <h3 class="jp-nm">山中伸弥<span class="en">Shinya Yamanaka</span></h3>
         <p class="jp-aff">京都大学<span class="jp-affen">Kyoto University</span><span class="jp-place">获奖时 · Kyoto，日本 · 份额 1/2</span></p>
-        <p class="jp-mot"><span class="en">for the discovery that mature cells can be reprogrammed to become pluripotent</span></p>
+        <p class="jp-ach">生命始于受精卵分裂产生新细胞，新细胞又继续分裂。这些细胞起初完全相同，随着时间推移却越来越多样化。人们长期认为，成熟或已特化的细胞不可能回到未成熟状态，如今这已被证明不成立。2006 年山中伸弥成功找出小鼠基因组中少数几个对此起决定作用的基因：把它们激活，小鼠的皮肤细胞可以被重编程为未成熟的干细胞，而这些干细胞又能长成体内不同类型的细胞。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the discovery that mature cells can be reprogrammed to become pluripotent</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Our lives begin when a fertilized egg divides and forms new cells that, in turn, also divide. These cells are identical in the beginning, but become increasingly varied over time. It was long thought that a mature or specialized cell could not return to an immature state, but this has now been proven incorrect. In 2006, Shinya Yamanaka succeeded in identifying a small number of genes within the genome of mice that proved decisive in this process. When activated, skin cells from mice could be reprogrammed to immature stem cells, which, in turn, can grow into different types of cells within the body.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/medicine/2012/yamanaka/facts/" rel="noopener">nobelprize.org · Shinya Yamanaka facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/medicine/2012/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1962-09-04</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/amano.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="天野浩官方肖像（Hiroshi Amano，nobelprize.org）">
+        <figcaption>© Nobel Prize Outreach. Photo: A. Mahmoud</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2014</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">天野浩<span class="en">Hiroshi Amano</span></h3>
         <p class="jp-aff">名古屋大学<span class="jp-affen">Nagoya University</span><span class="jp-place">获奖时 · Nagoya，日本 · 份额 1/3</span></p>
-        <p class="jp-mot"><span class="en">for the invention of efficient blue light-emitting diodes which has enabled bright and energy-saving white light sources</span></p>
+        <p class="jp-ach">照明对生活质量影响很大，发光二极管（LED）的发展带来了更高效的光源。要造出可用于照明的白光，需要红、绿、蓝三色光的组合，而蓝色 LED 远比红色和绿色二极管难做。当时还是名古屋大学博士生的天野浩与赤崎勇合作，坚持选择氮化镓：1986 年他们首次成功制出高质量的氮化镓晶体——在蓝宝石衬底上铺一层氮化铝，再在其上生长氮化镓；此后又发现材料在扫描电子显微镜中发光明亮，并由此做出了 p 型层。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the invention of efficient blue light-emitting diodes which has enabled bright and energy-saving white light sources</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Lighting plays a major role in our quality of life. The development of light-emitting diodes (LEDs) has made more efficient light sources possible. Creating white light that can be used for lighting requires a combination of red, green, and blue light. Blue LEDs proved to be much more difficult to create than red and green diodes. During the 1980s and 1990s Isamu Akasaki, Hiroshi Amano, and Shuji Nakamura successfully used the difficult-to-handle semiconductor gallium nitride to create effecient blue LEDs.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/2014/amano/facts/" rel="noopener">nobelprize.org · Hiroshi Amano facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/2014/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1960-09-11</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/akasaki.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="赤崎勇官方肖像（Isamu Akasaki，nobelprize.org）">
+        <figcaption>© Nobel Prize Outreach. Photo: A. Mahmoud</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2014</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">赤崎勇<span class="en">Isamu Akasaki</span></h3>
         <p class="jp-aff">名城大学<span class="jp-affen">Meijo University</span><span class="jp-place">获奖时 · Nagoya，日本 · 份额 1/3</span></p>
-        <p class="jp-mot"><span class="en">for the invention of efficient blue light-emitting diodes which has enabled bright and energy-saving white light sources</span></p>
+        <p class="jp-ach">照明对生活质量影响很大，发光二极管（LED）的发展带来了更高效的光源。要造出可用于照明的白光，需要红、绿、蓝三色光的组合，而蓝色 LED 远比红色和绿色二极管难做。当时不少人认为硒化锌更有前途，赤崎勇仍坚持选择氮化镓，并与名古屋大学的学生天野浩继续合作：1986 年他们首次成功制出高质量的氮化镓晶体——在蓝宝石衬底上铺一层氮化铝，再在其上生长氮化镓；此后又发现材料在扫描电子显微镜中发光明亮，并由此做出了 p 型层。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the invention of efficient blue light-emitting diodes which has enabled bright and energy-saving white light sources</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Lighting plays a major role in our quality of life. The development of light-emitting diodes (LEDs) has made more efficient light sources possible. Creating white light that can be used for lighting requires a combination of red, green, and blue light. Blue LEDs proved to be much more difficult to create than red and green diodes. During the 1980s and 1990s Isamu Akasaki, Hiroshi Amano, and Shuji Nakamura successfully used the difficult-to-handle semiconductor gallium nitride to create efficient blue LEDs.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/2014/akasaki/facts/" rel="noopener">nobelprize.org · Isamu Akasaki facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/2014/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1929-01-30</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/nakamura.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="中村修二官方肖像（Shuji Nakamura，nobelprize.org）">
+        <figcaption>© Nobel Prize Outreach. Photo: A. Mahmoud</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2014</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">中村修二<span class="en">Shuji Nakamura</span></h3>
         <p class="jp-aff">加利福尼亚大学<span class="jp-affen">University of California</span><span class="jp-place">获奖时 · Santa Barbara, CA，USA · 份额 1/3</span></p>
-        <p class="jp-mot"><span class="en">for the invention of efficient blue light-emitting diodes which has enabled bright and energy-saving white light sources</span></p>
+        <p class="jp-ach">照明对生活质量影响很大，发光二极管（LED）的发展带来了更高效的光源。要造出可用于照明的白光，需要红、绿、蓝三色光的组合，而蓝色 LED 远比红色和绿色二极管难做。在同行认为硒化锌更有前途时，任职于日亚化学的中村修二也选择了氮化镓；他还解释了赤崎勇与天野浩的 p 型层为何成功——电子束驱走了阻碍 p 型层形成的氢。中村随后用更简单也更便宜的办法取代电子束：1992 年通过加热材料，他做出了可用的 p 型层。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the invention of efficient blue light-emitting diodes which has enabled bright and energy-saving white light sources</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Lighting plays a major role in our quality of life. The development of light-emitting diodes (LEDs) has made more efficient light sources possible. Creating white light that can be used for lighting requires a combination of red, green, and blue light. Blue LEDs proved to be much more difficult to create than red and green diodes. During the 1980s and 1990s Isamu Akasaki, Hiroshi Amano, and Shuji Nakamura successfully used the difficult-to-handle semiconductor gallium nitride to create effecient blue LEDs.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/2014/nakamura/facts/" rel="noopener">nobelprize.org · Shuji Nakamura facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/2014/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1954-05-22</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/kajita.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="梶田隆章官方肖像（Takaaki Kajita，nobelprize.org）">
+        <figcaption>© Nobel Prize Outreach. Photo: A. Mahmoud</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2015</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">梶田隆章<span class="en">Takaaki Kajita</span></h3>
         <p class="jp-aff">东京大学<span class="jp-affen">University of Tokyo</span><span class="jp-place">获奖时 · Kashiwa，日本 · 份额 1/2</span></p>
-        <p class="jp-mot"><span class="en">for the discovery of neutrino oscillations, which shows that neutrinos have mass</span></p>
+        <p class="jp-ach">现代物理所用的标准模型里有三种极小、极难捕捉的粒子，称为中微子。1998 年，梶田隆章在日本一座矿山中的超级神冈探测器里，探测到宇宙射线与地球大气反应所产生的中微子。测量结果出现了偏差，而这一偏差只能用中微子在三种类型之间来回转换来解释——这意味着中微子必定有质量。标准模型却以中微子没有质量为基础，因此这个模型必须修改。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the discovery of neutrino oscillations, which shows that neutrinos have mass</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">The Standard Model used by modern physics has three types of a very small and elusive particle called the neutrino. In the Super-Kamiokande detector, an experimental facility in a mine in Japan in 1998, Takaaki Kajita detected neutrinos created in reactions between cosmic rays and the Earth’s atmosphere. Measurements showed deviations, which were explained by the neutrinos switching between the different types. This means that they must have mass. The Standard Model, however, is based on neutrinos lacking mass and the model must be revised.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/2015/kajita/facts/" rel="noopener">nobelprize.org · Takaaki Kajita facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/2015/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1959-03-09</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/omura.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="大村智官方肖像（Satoshi Ōmura，nobelprize.org）">
+        <figcaption>© Nobel Prize Outreach. Photo: A. Mahmoud</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2015</b><span class="jp-cat" style="color:var(--blue)">生理学或医学</span></div>
         <h3 class="jp-nm">大村智<span class="en">Satoshi Ōmura</span></h3>
         <p class="jp-aff">北里大学<span class="jp-affen">Kitasato University</span><span class="jp-place">获奖时 · Tokyo，日本 · 份额 1/4</span></p>
-        <p class="jp-mot"><span class="en">for their discoveries concerning a novel therapy against infections caused by roundworm parasites</span></p>
+        <p class="jp-ach">多种严重的传染病由昆虫传播的寄生虫引起。河盲症由一种微小的蠕虫引起，它能侵入角膜并致人失明；淋巴丝虫病（象皮病）同样由蠕虫引起，会造成慢性肿胀。大村智培养细菌——细菌会产生抑制其他微生物生长的物质。1978 年他成功培养出一个菌株，威廉·坎贝尔从中提纯出阿维菌素，经化学修饰后得到的伊维菌素对河盲症与象皮病都有效。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for their discoveries concerning a novel therapy against infections caused by roundworm parasites</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">A number of serious infectious diseases are caused by parasites spread by insects. River blindness is caused by a tiny worm that can infect the cornea and cause blindness. Lymphatic filariasis, or elephantiasis, is also caused by a worm and produces chronic swelling. Satoshi Omura cultured bacteria, which produce substances that inhibit the growth of other microorganisms. In 1978 he succeeded in culturing a strain from which William Campbell purified a substance, avermectin, which in a chemically modified form, ivermectin, proved effective against river blindness and elephantiasis.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/medicine/2015/omura/facts/" rel="noopener">nobelprize.org · Satoshi Ōmura facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/medicine/2015/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1935-07-12</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/ohsumi.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="大隅良典官方肖像（Yoshinori Ohsumi，nobelprize.org）">
+        <figcaption>© Nobel Prize Outreach. Photo: A. Mahmoud</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2016</b><span class="jp-cat" style="color:var(--blue)">生理学或医学</span></div>
         <h3 class="jp-nm">大隅良典<span class="en">Yoshinori Ohsumi</span></h3>
         <p class="jp-aff">东京工业大学<span class="jp-affen">Tokyo Institute of Technology</span><span class="jp-place">获奖时 · Tokyo，日本 · 份额 1</span></p>
-        <p class="jp-mot"><span class="en">for his discoveries of mechanisms for autophagy</span></p>
+        <p class="jp-ach">在我们细胞的溶酶体里，细胞的组成部分被处理以便再利用。这一过程的机制在 1990 年代初之前大多不为人知，直到大隅良典用酵母做了一系列开创性实验：他检出了「自噬」现象，并鉴定出对这一过程重要的基因。他的发现为更好地理解细胞应对营养缺乏与感染的能力、某些遗传性与神经疾病的成因以及癌症，奠定了基础。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for his discoveries of mechanisms for autophagy</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">In the lysosomes of our cells its components are processed for reuse. The mechanisms of this process were mostly unknown until the early 1990s, when Yoshinori Ohsumi conducted a series of groundbreaking experiments with yeast, where he detected autophagy and identified genes important for the process. Ohsumi’s discoveries laid the foundation for a better understanding of the ability of cells to manage malnutrition and infections, the causes of certain hereditary and neurological diseases, and cancer.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/medicine/2016/ohsumi/facts/" rel="noopener">nobelprize.org · Yoshinori Ohsumi facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/medicine/2016/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1945-02-09</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/honjo.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="本庶佑官方肖像（Tasuku Honjo，nobelprize.org）">
+        <figcaption>© Nobel Prize Outreach. Photo: A. Mahmoud</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2018</b><span class="jp-cat" style="color:var(--blue)">生理学或医学</span></div>
         <h3 class="jp-nm">本庶佑<span class="en">Tasuku Honjo</span></h3>
         <p class="jp-aff">京都大学<span class="jp-affen">Kyoto University</span><span class="jp-place">获奖时 · Kyoto，日本 · 份额 1/2</span></p>
-        <p class="jp-mot"><span class="en">for their discovery of cancer therapy by inhibition of negative immune regulation</span></p>
+        <p class="jp-ach">癌症每年夺去数百万人的生命，是人类最大的健康挑战之一。通过激发免疫系统攻击肿瘤细胞的固有能力，本庶佑与詹姆斯·艾利森建立了一种全新的癌症治疗原理。1992 年，本庶佑发现免疫细胞上的一种蛋白质，并在仔细研究其功能之后揭示：它起的是免疫系统的「刹车」作用。基于这一发现的疗法在对抗癌症中表现出显著效果。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for their discovery of cancer therapy by inhibition of negative immune regulation</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Cancer kills millions of people every year and is one of humanity’s greatest health challenges. By stimulating the inherent ability of our immune system to attack tumor cells Tasuku Honjo and James Allison have established an entirely new principle for cancer therapy. In 1992, Honjo discovered a protein on immune cells and, after careful exploration of its function, eventually revealed that it operates as a brake on the immune system. Therapies based on his discovery proved to be strikingly effective in the fight against cancer.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/medicine/2018/honjo/facts/" rel="noopener">nobelprize.org · Tasuku Honjo facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/medicine/2018/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1942-01-27</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/yoshino.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="吉野彰官方肖像（Akira Yoshino，nobelprize.org）">
+        <figcaption>© Nobel Prize Outreach. Photo: A. Mahmoud</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2019</b><span class="jp-cat" style="color:var(--gold-deep)">化学</span></div>
         <h3 class="jp-nm">吉野彰<span class="en">Akira Yoshino</span></h3>
         <p class="jp-aff">旭化成<span class="jp-affen">Asahi Kasei Corporation</span><span class="jp-place">获奖时 · Tokyo，日本 · 份额 1/3</span></p>
-        <p class="jp-mot"><span class="en">for the development of lithium-ion batteries</span></p>
+        <p class="jp-ach">把电能储存进电池，是解决世界能源供给的关键一环。锂元素在电池中很有用，因为它乐于释放电子。1985 年吉野彰做出了一种以石油焦为负极的电池——石油焦是一种碳材料，在分子层面带有可以容纳锂离子的空隙。这是第一块商业上可行的锂离子电池；这类电池如今广泛用于手机、电动汽车等电气设备。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the development of lithium-ion batteries</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Storing electrical energy in batteries is a key factor in solving the world&#x27;s energy supply. The element lithium is useful in batteries since it willingly releases electrons. In 1985 Akira Yoshino developed a battery with an anode of petroleum coke, a carbon material which, at a molecular level, has spaces that can house lithium ions. This was the first commercially viable lithium-ion battery. Such batteries are widely used in electrical equipment, for example mobile phones and electric cars.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/chemistry/2019/yoshino/facts/" rel="noopener">nobelprize.org · Akira Yoshino facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/chemistry/2019/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1948-01-30</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/manabe.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="真锅淑郎官方肖像（Syukuro Manabe，nobelprize.org）">
+        <figcaption>© Nobel Prize Outreach. Photo: Clément Morin.</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2021</b><span class="jp-cat" style="color:var(--navy)">物理学</span></div>
         <h3 class="jp-nm">真锅淑郎<span class="en">Syukuro Manabe</span></h3>
         <p class="jp-aff">普林斯顿大学<span class="jp-affen">Princeton University</span><span class="jp-place">获奖时 · Princeton, NJ，USA · 份额 1/4</span></p>
-        <p class="jp-mot"><span class="en">for the physical modelling of Earth’s climate, quantifying variability and reliably predicting global warming</span></p>
+        <p class="jp-ach">我们的世界充满以随机和无序为特征的复杂系统，其中对人类至关重要的一个，是地球的气候。真锅淑郎证明了大气中二氧化碳含量的升高如何导致地球表面温度升高。1960 年代，他主导建立了地球气候的物理模型，并且是第一个研究辐射平衡与气团垂直输送之间相互作用的人。他的工作为当今气候模式的发展奠定了基础。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the physical modelling of Earth’s climate, quantifying variability and reliably predicting global warming</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Our world is full of complex systems characterised by randomness and disorder. One complex system of vital importance to humankind is Earth’s climate. Syukuro Manabe demonstrated how increased levels of carbon dioxide in the atmosphere lead to increased temperatures at the surface of the Earth. In the 1960s, he led the development of physical models of the Earth’s climate and was the first person to explore the interaction between radiation balance and the vertical transport of air masses. His work laid the foundation for the development of current climate models.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/physics/2021/manabe/facts/" rel="noopener">nobelprize.org · Syukuro Manabe facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/physics/2021/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1931-09-21</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/kitagawa.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="北川进官方肖像（Susumu Kitagawa，nobelprize.org）">
+        <figcaption>© Nobel Prize Outreach. Photo: Clément Morin</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2025</b><span class="jp-cat" style="color:var(--gold-deep)">化学</span></div>
         <h3 class="jp-nm">北川进<span class="en">Susumu Kitagawa</span></h3>
         <p class="jp-aff">京都大学<span class="jp-affen">Kyoto University</span><span class="jp-place">获奖时 · Kyoto，日本 · 份额 1/3</span></p>
-        <p class="jp-mot"><span class="en">for the development of metal–organic frameworks</span></p>
+        <p class="jp-ach">金属有机框架（MOF）是一类多孔材料：金属离子与长链含碳分子形成带有内置空腔的晶体。改变构建单元，就能在空腔中捕获并储存特定物质。在理查德·罗布森的开创性工作之后，约在世纪之交，北川进与奥马尔·亚吉发展出更柔韧、更稳定的 MOF。它们可以被用来从沙漠空气中取水、捕获二氧化碳、储存有毒气体，或催化化学反应。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the development of metal–organic frameworks</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">Metal–organic frameworks (MOFs) are porous materials in which metal ions and long carbon-based molecules form crystals with built-in cavities. By varying the building blocks, specific substances can be captured and stored inside the cavities. Following pioneering work by Richard Robson, around the turn of the millenium, Susumu Kitagawa and Omar Yaghi developed more flexible and stable MOFs. These are possible to use, for example, to harvest water from desert air, capture carbon dioxide, store toxic gases or catalyse chemical reactions.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/chemistry/2025/kitagawa/facts/" rel="noopener">nobelprize.org · Susumu Kitagawa facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/chemistry/2025/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1951-07-04</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/sakaguchi.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="坂口志文官方肖像（Shimon Sakaguchi，nobelprize.org）">
+        <figcaption>© Nobel Prize Outreach. Photo: Clément Morin</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2025</b><span class="jp-cat" style="color:var(--blue)">生理学或医学</span></div>
         <h3 class="jp-nm">坂口志文<span class="en">Shimon Sakaguchi</span></h3>
         <p class="jp-aff">大阪大学<span class="jp-affen">The University of Osaka</span><span class="jp-place">获奖时 · Osaka，日本 · 份额 1/3</span></p>
-        <p class="jp-mot"><span class="en">for their discoveries concerning peripheral immune tolerance</span></p>
+        <p class="jp-ach">人体强大的免疫系统必须受到调节，否则它可能攻击我们自己的器官。1995 年，坂口志文发现了一类免疫细胞——调节性 T 细胞，它们保护身体免于自身免疫疾病。六年后，玛丽·布伦科与弗雷德·拉姆斯德尔发现某个基因的突变会导致自身免疫疾病，坂口据此得以证明：这个基因控制着他所发现的那类细胞的发育。这些发现有助于开发针对癌症与自身免疫疾病的治疗方法，并提高移植的成功率。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for their discoveries concerning peripheral immune tolerance</span></p>
+        <details class="jp-en"><summary>看官方原文（facts 页 Work 段）<span class="en">the original wording</span></summary>
+        <p class="en">The body’s powerful immune system must be regulated, or it may attack our own organs. In 1995, Shimon Sakaguchi discovered a class of immune cells, regulatory T cells, which protect the body from autoimmune diseases. Following Mary Brunkow and Fred Ramsdell’s discovery, six years later, that mutations in a gene cause autoimmune diseases, Sakaguchi was able to show that the gene controls the development of the cells he had identified. The discoveries can help the development of medical treatments for cancer and autoimmune diseases and lead to more successful transplantations.</p>
+        <p class="jp-srcline">来源：<a href="https://www.nobelprize.org/prizes/medicine/2025/sakaguchi/facts/" rel="noopener">nobelprize.org · Shimon Sakaguchi facts</a></p></details>
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/medicine/2025/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1951-01-19</span></p>
       </article>
 <article class="jp-card">
+      <figure class="jp-ph">
+        <img src="assets/jp/soai.webp" width="300" height="450" loading="lazy" decoding="async"
+             alt="硖合宪三官方肖像（Kenso Soai，nobelprize.org）">
+        <figcaption>Ill. Niklas Elmehed © Nobel Prize Outreach</figcaption>
+      </figure>
+      <div class="jp-c">
         <div class="jp-y"><b>2026</b><span class="jp-cat" style="color:var(--gold-deep)">化学</span></div>
         <h3 class="jp-nm">硖合宪三<span class="en">Kenso Soai</span></h3>
         <p class="jp-aff">东京理科大学<span class="jp-affen">Tokyo University of Science</span><span class="jp-place">获奖时 · Tokyo，日本 · 份额 1/2</span></p>
-        <p class="jp-mot"><span class="en">for the discovery of non-linear effects and autocatalysis in asymmetric organic synthesis</span></p>
+        <p class="jp-ach">有些化学反应会生成两种互为镜像的分子。数十年来研究者都知道，设计出只生成其中一种镜像的反应在理论上是可能的，但实践上如何做到一直是个谜。硖合宪三给出了解法：他设计的反应能自我催化（自催化），形成自我强化的效应，使其中一种镜像分子呈指数增长。反应开始时两种镜像分子都会生成，只是由于偶然，其中一种略多；这一点微小的过量就足以让它在整场反应中占据优势，最终可占产物的 99.99%。若重复实验，最终占优的也可能是另一种镜像分子——取决于反应开始时偶然发生的事。</p>
+        <p class="jp-mot"><span class="jp-lbl">官方获奖理由</span><span class="en">for the discovery of non-linear effects and autocatalysis in asymmetric organic synthesis</span></p>
+        
         <p class="jp-links"><a href="https://www.nobelprize.org/prizes/chemistry/2026/summary/" rel="noopener">诺贝尔奖官方页面<span class="en">nobelprize.org</span></a>
         <span class="jp-born">生于 1950-00-00</span></p>
       </article>
@@ -1029,6 +1317,9 @@
     <ul class="list">
       <li><b>得主名单、年份、奖项、份额、官方获奖理由、出生地与获奖时机构</b>：诺贝尔奖官方接口 <code>https://api.nobelprize.org/2.1/laureates?limit=1000&offset=0（另取 offset=1000）</code>，2026-10-10 拉取。</li>
       <li><b>逐人原始字段</b>：本页同目录 <code>jp-science-laureates.json</code>（27 条，未改写）。</li>
+      <li><b>每张卡的官方原文（facts 页 Work 段）</b>：同上接口对应的官方得主页，逐人抓取（<code>harvest_portraits.py</code>），原文逐字保留在卡片里可展开核对。</li>
+      <li><b>中文成就介绍</b>：上述官方 Work 段的中文转述（<code>achievements.json</code>，逐条记录依据哪份官方文本与官方页面链接）。其中 2014 年物理、2008 年物理三位／四位的分人细节，依据对应年份的官方科普页；2026 年化学奖依据官方科普背景 PDF <a href="https://www.nobelprize.org/uploads/2026/10/popular-chemistryprize2026-1.pdf" rel="noopener">popular-chemistryprize2026-1.pdf</a>（官方英文原文已存盘）。</li>
+      <li><b>肖像</b>：nobelprize.org 各位得主 facts 页的官方肖像原图，本地自托管，<b>仅等比缩放与转 WebP，不裁切、不加字</b>；每张下方保留官方署名行（如 <span class="en">Photo from the Nobel Foundation archive.</span> / <span class="en">© Nobel Prize Outreach. Photo: A. Mahmoud</span>）。官方摄权条款原文见<a href="index.html#srcs">主站「本馆说明 · 图片来源与授权」</a>：科普插图可免费用于非商业用途且须标注署名；媒体用图可在严格编辑用途下免费使用、须保留版权声明、<b>不包含转授权</b>。本页为<b>非商业</b>教育用途。</li>
       <li><b>筛选与计数脚本</b>：<code>harvest_jp.py</code>（拉取与筛选）、<code>make_table.py</code>（生成核对稿）、<code>build_jp.py</code>（本页）。</li>
       <li><b>一件事说清</b>：本页<b>没有</b>引用任何非官方来源来解释「为什么是这些人」；凡是解释，都在上面标了「本页观察」。</li>
       <li>主站：<a href="index.html">2026 年诺贝尔奖 · 六个奖</a>（<span class="en">https://riemann007.github.io/nobel-2026/</span>）</li>
